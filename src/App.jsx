@@ -28,8 +28,8 @@ export default function App() {
   return (
     <div className="app-root">
       <header className="topbar">
-        <h1>Interactive Map of Ancient Indian Temples</h1>
-        <p className="subtitle">Explore India’s sacred heritage by state</p>
+        {/*<h1>Interactive Map of Ancient Indian Temples</h1>
+        <p className="subtitle">Explore India’s sacred heritage by state</p>*/}
       </header>
 
       <main className="main-area">

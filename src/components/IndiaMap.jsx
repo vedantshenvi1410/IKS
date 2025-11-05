@@ -30,7 +30,7 @@ export default function IndiaMap({ onStateClick }) {
         dangerouslySetInnerHTML={{ __html: svgContent }}
       />
 
-      <p className="legend">🕉️ Click on a state to explore its ancient temples.</p>
+      {/* <p className="legend">🕉️ Click on a state to explore its ancient temples.</p> */}
 
       <style>{`
         .map-wrapper {
@@ -51,14 +51,14 @@ export default function IndiaMap({ onStateClick }) {
         }
 
         .india-map-container path {
-          fill: #e8dcb8;
-          stroke: #b48b4a;
+          fill: #fe6100bc;
+          stroke: #000000ff;
           stroke-width: 0.8;
           transition: fill 0.3s ease, transform 0.2s ease;
         }
 
         .india-map-container path:hover {
-          fill: #d4a373;
+          fill: #f8bc80ff;
           transform: scale(1.02);
           filter: drop-shadow(0 0 3px rgba(0,0,0,0.2));
         }
