@@ -1,0 +1,119 @@
+/* ===============================
+   Global Styles — Temple Map Project
+   =============================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #fffdf7;
+  color: #2e2a22;
+}
+
+/* App container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 600;
+  color: #4b382a;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Buttons */
+button {
+  background-color: #d4a373;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #b5895a;
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Map wrappers */
+.map-wrapper {
+  background: #fff8ef;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin: 1.5rem auto;
+}
+
+/* Legend text */
+.legend {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #5b4636;
+}
+
+/* State View styling */
+.state-view {
+  padding: 1.5rem;
+}
+
+.state-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4b382a;
+}
+
+.temple-list {
+  margin-top: 1.5rem;
+  text-align: left;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.temple-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.temple-list li {
+  margin-bottom: 0.5rem;
+}
+
+.temple-list button {
+  background: none;
+  color: #00695c;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.temple-list button:hover {
+  color: #004d40;
+  text-decoration: underline;
+}

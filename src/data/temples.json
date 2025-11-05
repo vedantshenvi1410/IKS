@@ -1,0 +1,398 @@
+{
+  "andhra_pradesh": [
+    {
+      "name": "Venkateswara Temple",
+      "location": "Tirupati",
+      "info": "Dravidian-style temple on Tirumala hills, one of the richest and most visited Hindu temples in the world.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Tirumala_090615.jpg",
+      "deity": "Venkateswara (Vishnu)",
+      "normalized_x": 0.55,
+      "normalized_y": 0.72
+    }
+  ],
+  "arunachal_pradesh": [
+    {
+      "name": "Malinithan Temple Ruins",
+      "location": "West Siang",
+      "info": "Archaeological site dedicated to Krishna and Rukmini, showing early Hindu influence in Northeast India.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Malinithan_temple_ruins.jpg",
+      "deity": "Krishna",
+      "normalized_x": 0.88,
+      "normalized_y": 0.38
+    }
+  ],
+  "assam": [
+    {
+      "name": "Kamakhya Temple",
+      "location": "Guwahati",
+      "info": "One of the 51 Shakti Peethas, dedicated to Goddess Kamakhya. A key center of Tantric worship.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Kamakhya_Temple_Guwahati.jpg",
+      "deity": "Kamakhya (Parvati)",
+      "normalized_x": 0.82,
+      "normalized_y": 0.48
+    }
+  ],
+  "bihar": [
+    {
+      "name": "Mahabodhi Temple",
+      "location": "Bodh Gaya",
+      "info": "UNESCO World Heritage Site where Buddha attained enlightenment under the Bodhi Tree.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Mahabodhi_Temple_2008.JPG",
+      "deity": "Buddha",
+      "normalized_x": 0.62,
+      "normalized_y": 0.55
+    }
+  ],
+  "chhattisgarh": [
+    {
+      "name": "Bhoramdeo Temple",
+      "location": "Kawardha",
+      "info": "Often called 'Khajuraho of Chhattisgarh', known for exquisite stone carvings and Nagara-style architecture.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Bhoramdeo_temple.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.56,
+      "normalized_y": 0.59
+    }
+  ],
+  "goa": [
+    {
+      "name": "Tambdi Surla Mahadev Temple",
+      "location": "Sanguem",
+      "info": "12th-century Kadamba-Yadava period temple dedicated to Shiva; oldest surviving in Goa.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Tambdi_Surla_Mahadev_Temple.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.40,
+      "normalized_y": 0.70
+    }
+  ],
+  "gujarat": [
+    {
+      "name": "Somnath Temple",
+      "location": "Prabhas Patan",
+      "info": "First among the 12 Jyotirlingas; repeatedly rebuilt, symbol of resilience and devotion.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Somnath_temple.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.28,
+      "normalized_y": 0.58
+    }
+  ],
+  "haryana": [
+    {
+      "name": "Kurukshetra Brahma Sarovar",
+      "location": "Kurukshetra",
+      "info": "Sacred tank linked to the Mahabharata; pilgrims believe a dip here cleanses all sins.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Brahma_Sarovar%2C_Kurukshetra.jpg",
+      "deity": "Vishnu",
+      "normalized_x": 0.48,
+      "normalized_y": 0.42
+    }
+  ],
+  "himachal_pradesh": [
+    {
+      "name": "Baijnath Temple",
+      "location": "Kangra",
+      "info": "Nagari-style stone temple dedicated to Shiva; built in 1204 CE by merchants Ahuka and Manyuka.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Baijnath_Temple_Kangra.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.45,
+      "normalized_y": 0.28
+    }
+  ],
+  "jharkhand": [
+    {
+      "name": "Baidhyanath Dham",
+      "location": "Deoghar",
+      "info": "One of the 12 Jyotirlingas; major pilgrimage destination in eastern India.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Baidyanath_Temple_Deoghar.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.64,
+      "normalized_y": 0.54
+    }
+  ],
+  "karnataka": [
+    {
+      "name": "Hampi Virupaksha",
+      "location": "Hampi",
+      "info": "Part of the Group of Monuments at Hampi — Vijayanagara period architecture.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Virupaksha_temple_1.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.35,
+      "normalized_y": 0.72
+    }
+  ],
+  "kerala": [
+    {
+      "name": "Sabarimala Temple",
+      "location": "Pathanamthitta",
+      "info": "Famous Ayyappa shrine located in the Western Ghats, visited by millions annually.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Sabarimala_Temple.jpg",
+      "deity": "Ayyappa",
+      "normalized_x": 0.42,
+      "normalized_y": 0.82
+    }
+  ],
+  "madhya_pradesh": [
+    {
+      "name": "Khajuraho Temples",
+      "location": "Chhatarpur",
+      "info": "UNESCO World Heritage group of temples famed for intricate erotic sculptures and Nagara-style art.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Khajuraho_Temples.jpg",
+      "deity": "Various (Hindu & Jain)",
+      "normalized_x": 0.46,
+      "normalized_y": 0.55
+    }
+  ],
+  "maharashtra": [
+    {
+      "name": "Ellora Caves (Kailasa)",
+      "location": "Ellora",
+      "info": "Rock-cut monolithic temple complex with Kailasa temple dedicated to Shiva.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Kailasa_Temple_Ellora.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.40,
+      "normalized_y": 0.50
+    }
+  ],
+  "manipur": [
+    {
+      "name": "Shree Govindajee Temple",
+      "location": "Imphal",
+      "info": "18th-century temple built by Maharaja Nara Singh; main Vaishnavite center of Manipur.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Shree_Govindajee_Temple_Imphal.jpg",
+      "deity": "Krishna",
+      "normalized_x": 0.90,
+      "normalized_y": 0.48
+    }
+  ],
+  "meghalaya": [
+    {
+      "name": "Nartiang Durga Temple",
+      "location": "Jaintia Hills",
+      "info": "One of the 51 Shakti Peethas; features both Hindu and indigenous Khasi rituals.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Nartiang_Durga_Temple.jpg",
+      "deity": "Durga",
+      "normalized_x": 0.86,
+      "normalized_y": 0.46
+    }
+  ],
+  "mizoram": [
+    {
+      "name": "Solomon's Temple",
+      "location": "Aizawl",
+      "info": "Modern temple inspired by biblical Solomon’s Temple; cultural landmark of Mizoram.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Solomon%27s_Temple_Aizawl.jpg",
+      "deity": "Universal",
+      "normalized_x": 0.88,
+      "normalized_y": 0.52
+    }
+  ],
+  "nagaland": [
+    {
+      "name": "Dimapur Kachari Ruins",
+      "location": "Dimapur",
+      "info": "Megalithic ruins attributed to the Kachari civilization, reflecting pre-Aryan culture.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Kachari_ruins_Dimapur.jpg",
+      "deity": "Ancestral",
+      "normalized_x": 0.90,
+      "normalized_y": 0.44
+    }
+  ],
+  "odisha": [
+    {
+      "name": "Konark Sun Temple",
+      "location": "Konark",
+      "info": "13th-century CE Sun temple, famous for its chariot-shaped architecture and stone wheels.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Konark_sun_temple.jpg",
+      "deity": "Surya",
+      "normalized_x": 0.68,
+      "normalized_y": 0.62
+    }
+  ],
+  "punjab": [
+    {
+      "name": "Golden Temple (Harmandir Sahib)",
+      "location": "Amritsar",
+      "info": "Holistic Sikh shrine with gold-plated sanctum surrounded by the sacred Amrit Sarovar.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Golden_Temple_in_Amritsar_India_-_September_2019.jpg",
+      "deity": "Guru Granth Sahib",
+      "normalized_x": 0.43,
+      "normalized_y": 0.32
+    }
+  ],
+  "rajasthan": [
+    {
+      "name": "Dilwara Temples",
+      "location": "Mount Abu",
+      "info": "White marble Jain temples built between 11th–13th century CE, known for exquisite carvings.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Dilwara_Temples_Mount_Abu.jpg",
+      "deity": "Tirthankaras (Jain)",
+      "normalized_x": 0.34,
+      "normalized_y": 0.44
+    }
+  ],
+  "sikkim": [
+    {
+      "name": "Rumtek Monastery",
+      "location": "Gangtok",
+      "info": "Seat of the Karmapa of Tibetan Buddhism; major monastery in Eastern Himalayas.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Rumtek_Monastery_Gangtok.jpg",
+      "deity": "Buddha",
+      "normalized_x": 0.86,
+      "normalized_y": 0.42
+    }
+  ],
+  "tamil_nadu": [
+    {
+      "name": "Brihadeeswarar Temple",
+      "location": "Thanjavur",
+      "info": "Built by Raja Raja Chola I (11th century CE). Classic Chola architecture; UNESCO World Heritage (Great Living Chola Temples).",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Brihadeeswarar_Temple_Tanjore.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.52,
+      "normalized_y": 0.78
+    }
+  ],
+  "telangana": [
+    {
+      "name": "Ramappa Temple",
+      "location": "Warangal",
+      "info": "UNESCO World Heritage site built by Kakatiya rulers in 13th century CE, famed for floating bricks.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Ramappa_Temple.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.52,
+      "normalized_y": 0.66
+    }
+  ],
+  "tripura": [
+    {
+      "name": "Tripura Sundari Temple",
+      "location": "Udaipur",
+      "info": "One of the 51 Shakti Peethas; temple houses a 5,000-year-old idol of Goddess Tripurasundari.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Tripura_Sundari_Temple_Udaipur.jpg",
+      "deity": "Durga",
+      "normalized_x": 0.88,
+      "normalized_y": 0.56
+    }
+  ],
+  "uttar_pradesh": [
+    {
+      "name": "Kashi Vishwanath Temple",
+      "location": "Varanasi",
+      "info": "One of the most sacred Jyotirlingas of Shiva, located on the banks of the Ganga.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Kashi_Vishwanath_Temple_Varanasi.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.58,
+      "normalized_y": 0.46
+    }
+  ],
+  "uttarakhand": [
+    {
+      "name": "Kedarnath Temple",
+      "location": "Rudraprayag",
+      "info": "12th-century stone temple dedicated to Shiva, located in the Himalayas at 3,583 m elevation.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Kedarnath_Temple.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.52,
+      "normalized_y": 0.35
+    }
+  ],
+  "west_bengal": [
+    {
+      "name": "Dakshineswar Kali Temple",
+      "location": "Kolkata",
+      "info": "19th-century temple complex built by Rani Rashmoni, dedicated to Goddess Kali.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Dakshineswar_Kali_Temple_-_Kolkata_2011-07-31_3985.JPG",
+      "deity": "Kali",
+      "normalized_x": 0.72,
+      "normalized_y": 0.54
+    }
+  ],
+  "andaman_and_nicobar_islands": [
+    {
+      "name": "Sri Vetrimalai Murugan Temple",
+      "location": "Port Blair",
+      "info": "Primary Hindu temple in the Andaman Islands, dedicated to Murugan.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Vetrimalai_Murugan_Temple_Port_Blair.jpg",
+      "deity": "Murugan",
+      "normalized_x": 0.80,
+      "normalized_y": 0.90
+    }
+  ],
+  "chandigarh": [
+    {
+      "name": "Mata Mansa Devi Temple",
+      "location": "Panchkula",
+      "info": "Ancient Shakti temple near Chandigarh, highly revered during Navratri.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Mata_Mansa_Devi_Temple%2C_Panchkula.jpg",
+      "deity": "Durga",
+      "normalized_x": 0.45,
+      "normalized_y": 0.38
+    }
+  ],
+  "dadra_and_nagar_haveli_and_daman_and_diu": [
+    {
+      "name": "Somnath Mahadev Temple (Diu)",
+      "location": "Diu",
+      "info": "Seaside Shiva temple with Portuguese-era architecture influence.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Somnath_Mahadev_Temple%2C_Diu.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.30,
+      "normalized_y": 0.62
+    }
+  ],
+  "delhi": [
+    {
+      "name": "Akshardham Temple",
+      "location": "New Delhi",
+      "info": "Modern masterpiece of Hindu architecture inaugurated in 2005, dedicated to Swaminarayan.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Akshardham_temple%2C_Delhi%2C_India.jpg",
+      "deity": "Swaminarayan",
+      "normalized_x": 0.50,
+      "normalized_y": 0.40
+    }
+  ],
+  "jammu_and_kashmir": [
+    {
+      "name": "Amarnath Cave Temple",
+      "location": "Pahalgam",
+      "info": "Sacred Himalayan cave shrine where the ice Shiva Lingam forms naturally each year.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Amarnath_Cave_Temple.jpg",
+      "deity": "Shiva",
+      "normalized_x": 0.45,
+      "normalized_y": 0.20
+    }
+  ],
+  "ladakh": [
+    {
+      "name": "Hemis Monastery",
+      "location": "Leh",
+      "info": "Largest and wealthiest monastery in Ladakh, associated with Guru Padmasambhava.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Hemis_Monastery_Leh.jpg",
+      "deity": "Buddha",
+      "normalized_x": 0.40,
+      "normalized_y": 0.18
+    }
+  ],
+  "lakshadweep": [
+    {
+      "name": "Ujra Mosque",
+      "location": "Kavaratti",
+      "info": "17th-century mosque known for intricate wood carvings and peaceful coastal setting.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Ujra_Mosque_Kavaratti.jpg",
+      "deity": "Islamic",
+      "normalized_x": 0.33,
+      "normalized_y": 0.88
+    }
+  ],
+  "puducherry": [
+    {
+      "name": "Manakula Vinayagar Temple",
+      "location": "Puducherry",
+      "info": "Historic temple dedicated to Ganesha, predating French colonial era.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Manakula_Vinayagar_Temple_Pondicherry.jpg",
+      "deity": "Ganesha",
+      "normalized_x": 0.56,
+      "normalized_y": 0.80
+    }
+  ]
+}
