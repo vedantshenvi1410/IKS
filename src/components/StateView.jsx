@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import indiaSVG from "../assets/in.svg";
 import './StateView.css';
 
-
-export default function StateView({ stateId, temples = [], onBack, onSelectTemple }) {
+export default function StateView({ stateId, temples = [], onBack }) {
   const [statePath, setStatePath] = useState(null);
+  const [selectedTemple, setSelectedTemple] = useState(null);
 
   useEffect(() => {
     async function loadStatePath() {
@@ -20,7 +20,6 @@ export default function StateView({ stateId, temples = [], onBack, onSelectTempl
           return;
         }
 
-        // Extract d attribute for <path> or <g> inner markup
         const d = pathEl.getAttribute("d");
         const inner = d
           ? <path d={d} fill="#f7eee2" stroke="#cfa06a" strokeWidth="3" />
@@ -45,7 +44,6 @@ export default function StateView({ stateId, temples = [], onBack, onSelectTempl
         <svg viewBox="0 0 1000 1000" className="state-svg">
           <g className="state-shape">{statePath}</g>
 
-          {/* Temple markers */}
           {temples.map((t, idx) => {
             const cx = (t.normalized_x || 0.5) * 1000;
             const cy = (t.normalized_y || 0.5) * 1000;
@@ -54,7 +52,7 @@ export default function StateView({ stateId, temples = [], onBack, onSelectTempl
                 key={idx}
                 className="marker"
                 transform={`translate(${cx}, ${cy})`}
-                onClick={() => onSelectTemple(t)}
+                onClick={() => setSelectedTemple(t)}
               >
                 <circle r="10" />
                 <text y="-16" textAnchor="middle" className="marker-label">
@@ -72,7 +70,7 @@ export default function StateView({ stateId, temples = [], onBack, onSelectTempl
           <ul>
             {temples.map((t, i) => (
               <li key={i}>
-                <button onClick={() => onSelectTemple(t)}>
+                <button onClick={() => setSelectedTemple(t)}>
                   {t.name} — {t.location}
                 </button>
               </li>
@@ -83,110 +81,19 @@ export default function StateView({ stateId, temples = [], onBack, onSelectTempl
         )}
       </div>
 
-      <style>{`
-        .state-view {
-          padding: 1rem;
-          text-align: center;
-        }
-
-        .state-title {
-          margin: 0.5rem 0 1rem;
-          color: #5a3e1e;
-          font-size: 1.4rem;
-          font-weight: 700;
-          text-transform: capitalize;
-        }
-
-        .back-btn {
-          background: none;
-          border: 1px solid #cfa06a;
-          padding: 0.4rem 1rem;
-          cursor: pointer;
-          border-radius: 6px;
-          transition: 0.2s;
-        }
-
-        .back-btn:hover {
-          background: #f6e7d4;
-        }
-
-        .state-svg-wrap {
-          width: 100%;
-          max-width: 700px;
-          margin: 1rem auto;
-          background: #fffaf3;
-          border-radius: 10px;
-          box-shadow: 0 0 10px rgba(0,0,0,0.08);
-          overflow: hidden;
-        }
-
-        .state-svg {
-          width: 100%;
-          height: auto;
-        }
-
-        .state-shape path,
-        .state-shape g path {
-          fill: #f7eee2;
-          stroke: #cfa06a;
-          stroke-width: 3;
-        }
-
-        .marker circle {
-          fill: #d63384;
-          stroke: #fff;
-          stroke-width: 2;
-          cursor: pointer;
-          transition: transform 0.2s ease, fill 0.2s;
-        }
-
-        .marker:hover circle {
-          transform: scale(1.3);
-          fill: #b62b72;
-        }
-
-        .marker-label {
-          font-size: 0.75rem;
-          font-weight: 600;
-          fill: #222;
-          pointer-events: none;
-        }
-
-        .temple-list {
-          margin-top: 1.5rem;
-          text-align: left;
-          max-width: 600px;
-          margin-inline: auto;
-        }
-
-        .temple-list ul {
-          list-style: none;
-          padding: 0;
-        }
-
-        .temple-list li {
-          margin-bottom: 0.4rem;
-        }
-
-        .temple-list button {
-          background: none;
-          border: none;
-          cursor: pointer;
-          color: #00695c;
-          font-size: 1rem;
-          transition: 0.2s;
-        }
-
-        .temple-list button:hover {
-          color: #004d40;
-          text-decoration: underline;
-        }
-
-        .no-temples {
-          color: #666;
-          font-style: italic;
-        }
-      `}</style>
+      {/* Popup modal for temple info */}
+      {selectedTemple && (
+        <div className="popup-overlay" onClick={() => setSelectedTemple(null)}>
+          <div className="popup-content" onClick={e => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setSelectedTemple(null)}>×</button>
+            <h2>{selectedTemple.name}</h2>
+            <p><strong>Location:</strong> {selectedTemple.location}</p>
+            <p><strong>Deity:</strong> {selectedTemple.deity}</p>
+            <p>{selectedTemple.info}</p>
+            {selectedTemple.image_url && <img className="temple-img" src={selectedTemple.image_url} alt={selectedTemple.name} />}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
