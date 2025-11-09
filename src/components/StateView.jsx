@@ -1,18 +1,33 @@
 import React, { useEffect, useState } from "react";
 import indiaSVG from "../assets/in.svg";
-import './StateView.css';
+import "./StateView.css";
 
 export default function StateView({ stateId, temples = [], onBack }) {
+  const [fullIndiaPaths, setFullIndiaPaths] = useState(null);
   const [statePath, setStatePath] = useState(null);
   const [selectedTemple, setSelectedTemple] = useState(null);
 
   useEffect(() => {
-    async function loadStatePath() {
+    async function loadSVG() {
       try {
         const res = await fetch(indiaSVG);
         const data = await res.text();
         const parser = new DOMParser();
         const svgDoc = parser.parseFromString(data, "image/svg+xml");
+
+        // Load all India paths
+        const paths = Array.from(svgDoc.querySelectorAll("path")).map((p, i) => (
+          <path
+            key={i}
+            d={p.getAttribute("d")}
+            fill="#fef8f0"
+            stroke="#e0c7a0"
+            strokeWidth="1"
+          />
+        ));
+        setFullIndiaPaths(paths);
+
+        // Load selected state path
         const pathEl = svgDoc.getElementById(stateId);
         if (!pathEl) {
           console.warn(`⚠️ No path found for state: ${stateId}`);
@@ -21,9 +36,11 @@ export default function StateView({ stateId, temples = [], onBack }) {
         }
 
         const d = pathEl.getAttribute("d");
-        const inner = d
-          ? <path d={d} fill="#f7eee2" stroke="#cfa06a" strokeWidth="3" />
-          : <g dangerouslySetInnerHTML={{ __html: pathEl.innerHTML }} />;
+        const inner = d ? (
+          <path d={d} fill="#f7eee2" stroke="#cfa06a" strokeWidth="3" />
+        ) : (
+          <g dangerouslySetInnerHTML={{ __html: pathEl.innerHTML }} />
+        );
 
         setStatePath(inner);
       } catch (err) {
@@ -31,19 +48,26 @@ export default function StateView({ stateId, temples = [], onBack }) {
       }
     }
 
-    loadStatePath();
+    loadSVG();
   }, [stateId]);
 
   return (
     <div className="state-view">
-      <button className="back-btn" onClick={onBack}>← Back to India</button>
+      <button className="back-btn" onClick={onBack}>
+        ← Back to India
+      </button>
 
       <h2 className="state-title">{stateId.replaceAll("_", " ").toUpperCase()}</h2>
 
       <div className="state-svg-wrap">
         <svg viewBox="0 0 1000 1000" className="state-svg">
+          {/* Full India map background */}
+          <g className="india-map">{fullIndiaPaths}</g>
+
+          {/* Highlighted state */}
           <g className="state-shape">{statePath}</g>
 
+          {/* Temple markers */}
           {temples.map((t, idx) => {
             const cx = (t.normalized_x || 0.5) * 1000;
             const cy = (t.normalized_y || 0.5) * 1000;
@@ -64,6 +88,7 @@ export default function StateView({ stateId, temples = [], onBack }) {
         </svg>
       </div>
 
+      {/* Temple list */}
       <div className="temple-list">
         <h3>Temples in {stateId.replaceAll("_", " ")}</h3>
         {temples.length > 0 ? (
@@ -81,16 +106,28 @@ export default function StateView({ stateId, temples = [], onBack }) {
         )}
       </div>
 
-      {/* Popup modal for temple info */}
+      {/* Popup modal */}
       {selectedTemple && (
         <div className="popup-overlay" onClick={() => setSelectedTemple(null)}>
-          <div className="popup-content" onClick={e => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setSelectedTemple(null)}>×</button>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setSelectedTemple(null)}>
+              ×
+            </button>
             <h2>{selectedTemple.name}</h2>
-            <p><strong>Location:</strong> {selectedTemple.location}</p>
-            <p><strong>Deity:</strong> {selectedTemple.deity}</p>
+            <p>
+              <strong>Location:</strong> {selectedTemple.location}
+            </p>
+            <p>
+              <strong>Deity:</strong> {selectedTemple.deity}
+            </p>
             <p>{selectedTemple.info}</p>
-            {selectedTemple.image_url && <img className="temple-img" src={selectedTemple.image_url} alt={selectedTemple.name} />}
+            {selectedTemple.image_url && (
+              <img
+                className="temple-img"
+                src={selectedTemple.image_url}
+                alt={selectedTemple.name}
+              />
+            )}
           </div>
         </div>
       )}
