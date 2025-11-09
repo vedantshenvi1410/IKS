@@ -74,6 +74,18 @@
   margin-inline: auto;
 }
 
+
+.temple-img {
+  max-width: 300px; /* adjust as needed */
+  max-height: 200px; /* adjust as needed */
+  width: auto;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  border-radius: 6px; /* optional */
+  object-fit: cover; /* ensures the image scales nicely */
+}
+
 .temple-list ul {
   list-style: none;
   padding: 0;
