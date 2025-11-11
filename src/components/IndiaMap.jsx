@@ -1,23 +1,19 @@
 import React, { useRef, useEffect, useState } from 'react';
-import indiaSVG from '../assets/in.svg'; // Path to India map SVG
+import indiaSVG from '../assets/in.svg';
 
 export default function IndiaMap({ onStateClick }) {
   const svgContainerRef = useRef(null);
   const [svgContent, setSvgContent] = useState('');
 
   useEffect(() => {
-    // Load India SVG file
     fetch(indiaSVG)
       .then(res => res.text())
-      .then(data => {
-        setSvgContent(data);
-      })
+      .then(data => setSvgContent(data))
       .catch(err => console.error('Failed to load India SVG:', err));
   }, []);
 
   const handleClick = (event) => {
     const id = event.target.id;
-    console.log('Clicked SVG ID:', id);
     if (onStateClick) onStateClick(id);
   };
 
@@ -30,46 +26,53 @@ export default function IndiaMap({ onStateClick }) {
         dangerouslySetInnerHTML={{ __html: svgContent }}
       />
 
-      {/* <p className="legend"> Click on a state to explore its ancient temples.</p> */}
-
       <style>{`
         .map-wrapper {
+          perspective: 1200px;
           text-align: center;
-          padding: 1.5rem;
-          background: linear-gradient(180deg, #fffdf7 0%, #fff5e1 100%);
-          border-radius: 12px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          padding: 2rem;
+          background: radial-gradient(circle at top left, #fffbe6, #ffe0b2);
+          border-radius: 18px;
+          box-shadow: 0 12px 30px rgba(0,0,0,0.2);
           max-width: 900px;
           margin: 2rem auto;
+          transform-style: preserve-3d;
+          overflow: visible; /* ✅ Let 3D map show fully */
+        }
+
+        .india-map-container {
+          display: inline-block;
+          transform: rotateX(8deg) rotateY(-5deg) translateZ(90px) scale(0.95); /* lifted up */
+          transform-origin: center center;
+          transition: transform 0.6s ease, filter 0.4s ease;
+          overflow: visible;
+        }
+
+        .india-map-container:hover {
+          transform: rotateX(0deg) rotateY(0deg) scale(1.03);
+          filter: brightness(1.08);
         }
 
         .india-map-container svg {
           width: 100%;
           height: auto;
           cursor: pointer;
-          transition: all 0.2s ease;
+          overflow: visible;
         }
 
         .india-map-container path {
-          fill: #fe6100bc;
-          stroke: #000000ff;
-          stroke-width: 0.8;
-          transition: transform 0.2s ease, fill 0.3s ease, filter 0.2s ease;
-          transform-origin: center center;
+          fill: #ff7a00; /* solid orange */
+          stroke: #3b2b19;
+          stroke-width: 0.7;
+          filter: drop-shadow(0 2px 2px rgba(0,0,0,0.4))
+                  drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+          transition: all 0.25s ease;
         }
 
         .india-map-container path:hover {
-          fill: #f8bc80ff;
-          transform: scale(1.04) translateY(-3px); 
-          filter: drop-shadow(0 8px 12px rgba(0,0,0,0.25)); 
-          cursor: pointer;
-        }
-
-        .legend {
-          margin-top: 1rem;
-          font-size: 0.95rem;
-          color: #5b4636;
-          font-weight: 500;
+          fill: #ffa447;
+          transform: translateZ(8px);
+          filter: drop-shadow(0 10px 8px rgba(0,0,0,0.35)) brightness(1.1);
         }
       `}</style>
     </div>
