@@ -265,7 +265,7 @@ export default function StateView({ stateId, temples = [], onBack }) {
         /* dim non-selected states and highlight selected handled inline, but here's fallback styling */
         .temple-marker circle { transition: transform 0.15s ease; }
         .temple-marker:hover circle { transform: scale(1.3); }
-        .marker-label { font-family: system-ui; font-size: 32px; font-weight:600; fill: #ffffffff; pointer-events: none; }
+        .marker-label { font-family: system-ui; font-size: 32px; font-weight:600; fill: #000000ff; pointer-events: none; }
 
         /* popup */
         .popup-overlay {
