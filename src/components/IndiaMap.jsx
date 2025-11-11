@@ -3,6 +3,7 @@ import indiaSVG from '../assets/in.svg';
 
 export default function IndiaMap({ onStateClick }) {
   const svgContainerRef = useRef(null);
+  const tooltipRef = useRef(null);
   const [svgContent, setSvgContent] = useState('');
 
   useEffect(() => {
@@ -12,9 +13,45 @@ export default function IndiaMap({ onStateClick }) {
       .catch(err => console.error('Failed to load India SVG:', err));
   }, []);
 
+  useEffect(() => {
+    const container = svgContainerRef.current;
+    const tooltip = tooltipRef.current;
+    if (!container || !tooltip) return;
+
+    const handleMouseOver = (e) => {
+      const target = e.target;
+      if (target.tagName === 'path' && target.id) {
+        const name = target.getAttribute('name') || target.id.replace(/_/g, ' ');
+        tooltip.textContent = name.toUpperCase();
+        tooltip.style.opacity = '1';
+      }
+    };
+
+    const handleMouseMove = (e) => {
+      tooltip.style.left = e.pageX + 12 + 'px';
+      tooltip.style.top = e.pageY - 24 + 'px';
+    };
+
+    const handleMouseOut = (e) => {
+      if (e.target.tagName === 'path') {
+        tooltip.style.opacity = '0';
+      }
+    };
+
+    container.addEventListener('mouseover', handleMouseOver);
+    container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('mouseout', handleMouseOut);
+
+    return () => {
+      container.removeEventListener('mouseover', handleMouseOver);
+      container.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('mouseout', handleMouseOut);
+    };
+  }, [svgContent]);
+
   const handleClick = (event) => {
     const id = event.target.id;
-    if (onStateClick) onStateClick(id);
+    if (onStateClick && id) onStateClick(id);
   };
 
   return (
@@ -25,6 +62,8 @@ export default function IndiaMap({ onStateClick }) {
         onClick={handleClick}
         dangerouslySetInnerHTML={{ __html: svgContent }}
       />
+
+      <div ref={tooltipRef} className="state-tooltip" />
 
       <style>{`
         .map-wrapper {
@@ -37,19 +76,20 @@ export default function IndiaMap({ onStateClick }) {
           max-width: 900px;
           margin: 2rem auto;
           transform-style: preserve-3d;
-          overflow: visible; /* ✅ Let 3D map show fully */
+          overflow: visible;
+          position: relative;
         }
 
         .india-map-container {
           display: inline-block;
-          transform: rotateX(8deg) rotateY(-5deg) translateZ(90px) scale(0.95); /* lifted up */
+          transform: rotateX(8deg) rotateY(-5deg) translateZ(90px) scale(0.95);
           transform-origin: center center;
           transition: transform 0.6s ease, filter 0.4s ease;
           overflow: visible;
         }
 
         .india-map-container:hover {
-          transform: rotateX(0deg) rotateY(0deg) scale(1.03);
+          transform: rotateX(0deg) rotateY(0deg) scale(1.06);
           filter: brightness(1.08);
         }
 
@@ -61,7 +101,7 @@ export default function IndiaMap({ onStateClick }) {
         }
 
         .india-map-container path {
-          fill: #ff7a00; /* solid orange */
+          fill: #ff7a00;
           stroke: #3b2b19;
           stroke-width: 0.7;
           filter: drop-shadow(0 2px 2px rgba(0,0,0,0.4))
@@ -73,6 +113,21 @@ export default function IndiaMap({ onStateClick }) {
           fill: #ffa447;
           transform: translateZ(8px);
           filter: drop-shadow(0 10px 8px rgba(0,0,0,0.35)) brightness(1.1);
+        }
+
+        .state-tooltip {
+          position: absolute;
+          pointer-events: none;
+          background: rgba(0,0,0,0.75);
+          color: #fff;
+          padding: 6px 10px;
+          border-radius: 6px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          opacity: 0;
+          transition: opacity 0.15s ease;
+          transform: translate(-50%, -50%);
+          z-index: 9999;
         }
       `}</style>
     </div>
