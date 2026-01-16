@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import IndiaMap from './components/IndiaMap';
 import StateView from './components/StateView';
 import templesData from './data/temples.json';
-import './index.css'; // Single CSS file
+import './index.css'; 
 
-// Mappings for SVG IDs to JSON keys
+// Mappings for SVG IDs (from standard India maps) to JSON keys
 const stateIdMap = {
   INKA: 'karnataka', INTN: 'manipur', INAP: 'andhra_pradesh', INAR: 'arunachal_pradesh',
   INAS: 'assam', INBI: 'bihar', INCH: 'chhattisgarh', INGO: 'goa', INGJ: 'gujarat',
@@ -23,14 +23,15 @@ export default function App() {
   const [selectedState, setSelectedState] = useState(null);
 
   const handleStateClick = (svgId) => {
-    // Some SVGs might return undefined id or parent id, handle safely
     if (!svgId) return;
+    
+    // Normalize ID: Try the map first, otherwise lower case (fallback)
     const normalizedId = stateIdMap[svgId.toUpperCase()] || svgId.toLowerCase();
     
-    if (templesData[normalizedId]) {
+    // Check if we have data (or at least valid mapping)
+    if (normalizedId) {
+      console.log(`Navigating to state: ${normalizedId}`);
       setSelectedState(normalizedId);
-    } else {
-      console.warn(`No data for ${normalizedId}`);
     }
   };
 
@@ -53,6 +54,10 @@ export default function App() {
           />
         )}
       </main>
+
+      <footer className="footer">
+        © {new Date().getFullYear()} Indian Knowledge Systems — Heritage Map
+      </footer>
     </div>
   );
 }
