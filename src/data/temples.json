@@ -6,8 +6,8 @@
       "info": "Located on the Seshachalam Hills, this Dravidian-style temple is revered as 'Kaliyuga Vaikuntham'. Dedicated to Lord Venkateswara (Vishnu), it is managed by the Tirumala Tirupati Devasthanams (TTD) and is one of the wealthiest and most visited religious sites globally. Famous for its 'Suprabhata' ritual and the Brahmotsavam festival.",
       "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEituw1wwqvcJ8Z2ipzHPkN9hZHQt02zPyckkPNeJI1DsDQ8bwxQ4YhdcRYXsOG1b6QUiowRdVT94IDHs4F6cKPSYnvC6AuNXGHRHIJGRKIU3Oz16AFrblnDWHbpkhDIJ_8pCBJAl_k7i5s/s1600/2017-03-23.jpg",
       "deity": "Venkateswara (Vishnu)",
-      "normalized_x": 0.55,
-      "normalized_y": 0.72
+      "normalized_x": 0.52,
+      "normalized_y": 0.70
     }
   ],
   "arunachal_pradesh": [
@@ -29,7 +29,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-lX0YqRf2xg4cCfNNJilmxxjnxwNzRdczKw&usqp=CAU",
       "deity": "Kamakhya (Parvati)",
       "normalized_x": 0.82,
-      "normalized_y": 0.48
+      "normalized_y": 0.40
     }
   ],
   "bihar": [
@@ -39,8 +39,8 @@
       "info": "A UNESCO World Heritage Site marking where Buddha attained enlightenment. The current 5th–6th-century brick temple houses the Vajrasana (diamond throne) and the sacred Bodhi Tree. It is managed by the Bodhgaya Temple Management Committee.",
       "image_url": "https://sabrangindia.in/wp-content/uploads/2025/03/Mahabodhi_Temple_Complex_511d2e9a47.webp",
       "deity": "Buddha",
-      "normalized_x": 0.62,
-      "normalized_y": 0.55
+      "normalized_x": 0.65,
+      "normalized_y": 0.45
     }
   ],
   "chhattisgarh": [
@@ -50,8 +50,8 @@
       "info": "Known as the 'Khajuraho of Chhattisgarh', this 11th-century Shiva temple features intricate erotic sculptures and Nagara-style architecture. Set near the Maikal hills, it is managed by state tourism/culture bodies and a local committee.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb-KCtNdO0_Semwre1TMFYh5uQCGR9PcokEA&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.56,
-      "normalized_y": 0.59
+      "normalized_x": 0.55,
+      "normalized_y": 0.50
     }
   ],
   "goa": [
@@ -61,8 +61,8 @@
       "info": "A 12th-century Kadamba-style Shiva temple built from basalt, located within the Bhagwan Mahavir Wildlife Sanctuary. It is the oldest surviving stone temple in Goa, known for its intricate carvings and secluded forest setting.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzdj_Q2Nikbvas2vfatXSa40jFybSAeWu6rw&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.40,
-      "normalized_y": 0.70
+      "normalized_x": 0.35,
+      "normalized_y": 0.68
     }
   ],
   "gujarat": [
@@ -73,7 +73,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy881HE9RZvM3ELyHqRJA3CrmHGfhzeYZhyQ&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.28,
-      "normalized_y": 0.58
+      "normalized_y": 0.52
     }
   ],
   "haryana": [
@@ -83,8 +83,8 @@
       "info": "A vast man-made sacred tank associated with Lord Brahma and the Mahabharata. It is famous for the massive congregation of pilgrims during solar eclipses and the annual International Gita Mahotsav. Managed by the Kurukshetra Development Board.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ2hl1CxaGgYO5uh9iKix9-TOX7LQstw4cYA&usqp=CAU",
       "deity": "Vishnu/Brahma",
-      "normalized_x": 0.48,
-      "normalized_y": 0.42
+      "normalized_x": 0.46,
+      "normalized_y": 0.30
     }
   ],
   "himachal_pradesh": [
@@ -95,7 +95,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs73Dj1pDKVmiHBIAcm-u1piiw6xME_gtclg&usqp=CAU",
       "deity": "Shiva (Vaidyanath)",
       "normalized_x": 0.45,
-      "normalized_y": 0.28
+      "normalized_y": 0.25
     }
   ],
   "jharkhand": [
@@ -106,7 +106,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqGWKsWx4xCUzXpqZIgrcmZc2bUXNKxo47pg&usqp=CAU",
       "deity": "Shiva (Baidyanath)",
       "normalized_x": 0.64,
-      "normalized_y": 0.54
+      "normalized_y": 0.45
     }
   ],
   "karnataka": [
@@ -116,8 +116,8 @@
       "info": "The oldest active temple in the UNESCO-listed Hampi ruins, dedicated to Shiva (Virupaksha). Famous for its towering gopuram and the unique inverted shadow phenomenon in one of its chambers. Managed by a local body and state endowments department.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz2ZFPGapnxrIwZ7H9Z4ZzIs-Cdcv1ugVa0Q&usqp=CAU",
       "deity": "Shiva (Virupaksha)",
-      "normalized_x": 0.35,
-      "normalized_y": 0.72
+      "normalized_x": 0.40,
+      "normalized_y": 0.68
     }
   ],
   "kerala": [
@@ -128,7 +128,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ55scXw1egykZgM4o-93IxvfYlhiMkoPPt1A&usqp=CAU",
       "deity": "Ayyappa",
       "normalized_x": 0.42,
-      "normalized_y": 0.82
+      "normalized_y": 0.80
     }
   ],
   "madhya_pradesh": [
@@ -138,8 +138,8 @@
       "info": "UNESCO World Heritage Site famous for its Nagara-style architecture and exquisite sculptures, including erotic carvings. Built by the Chandela dynasty (c. 950–1050 AD), the Kandariya Mahadeva temple is the largest. Managed by the ASI.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8yMJ802PLY0wrnKl6t3C3Cnx2Jd0IzPUCw&usqp=CAU",
       "deity": "Various (Hindu & Jain)",
-      "normalized_x": 0.46,
-      "normalized_y": 0.55
+      "normalized_x": 0.53,
+      "normalized_y": 0.43
     }
   ],
   "maharashtra": [
@@ -150,7 +150,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf18VJ6BPPULhhPcs7ATAhvp9mq6_NJxeRWg&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.40,
-      "normalized_y": 0.50
+      "normalized_y": 0.56
     }
   ],
   "manipur": [
@@ -161,7 +161,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbazszvMxniEyr7CV4nreo7S0JAsEJC4ddw&usqp=CAU",
       "deity": "Krishna (Govindaji)",
       "normalized_x": 0.90,
-      "normalized_y": 0.48
+      "normalized_y": 0.44
     }
   ],
   "meghalaya": [
@@ -172,7 +172,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAu92Mmi6XSc5C7JUDwt1JU4NbK0hAKAKrpw&usqp=CAU",
       "deity": "Durga (Jainteshwari)",
       "normalized_x": 0.86,
-      "normalized_y": 0.46
+      "normalized_y": 0.42
     }
   ],
   "mizoram": [
@@ -183,7 +183,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh10ddDEbG6vwJPP4lat9NJhGKtt2qsL-xBw&usqp=CAU",
       "deity": "Christian (Universal)",
       "normalized_x": 0.88,
-      "normalized_y": 0.52
+      "normalized_y": 0.48
     }
   ],
   "nagaland": [
@@ -194,7 +194,7 @@
       "image_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/62/13/76/pillars-at-kachari-ruins.jpg?w=800&h=-1&s=1",
       "deity": "Ancestral/Historical",
       "normalized_x": 0.90,
-      "normalized_y": 0.44
+      "normalized_y": 0.40
     }
   ],
   "odisha": [
@@ -205,7 +205,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnOXqbWVS2TKpb7tDtjWUY_89imHvLbEHFSg&usqp=CAU",
       "deity": "Surya",
       "normalized_x": 0.68,
-      "normalized_y": 0.62
+      "normalized_y": 0.58
     }
   ],
   "punjab": [
@@ -216,7 +216,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5BlZ3US0rXVBfh7D5lqy0tsb3Vjhswi_9PQ&usqp=CAU",
       "deity": "Guru Granth Sahib",
       "normalized_x": 0.43,
-      "normalized_y": 0.32
+      "normalized_y": 0.27
     }
   ],
   "rajasthan": [
@@ -226,7 +226,7 @@
       "info": "White marble Jain temples built between 11th–13th century CE, known for exquisite carvings.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxZF9tsRfY4U3GIdREeNVNs3eWPwp-VRk4yQ&usqp=CAU",
       "deity": "Tirthankaras (Jain)",
-      "normalized_x": 0.34,
+      "normalized_x": 0.33,
       "normalized_y": 0.44
     }
   ],
@@ -237,8 +237,8 @@
       "info": "Seat of the Karmapa of Tibetan Buddhism; major monastery in Eastern Himalayas.",
       "image_url": "https://share.google/E3JueaT8ozknTHFL1",
       "deity": "Buddha",
-      "normalized_x": 0.86,
-      "normalized_y": 0.42
+      "normalized_x": 0.82,
+      "normalized_y": 0.37
     }
   ],
   "tamil_nadu": [
@@ -260,7 +260,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAjL3EXgGKbcKzex76A4Ylp40OTsbflLPtPg&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.52,
-      "normalized_y": 0.66
+      "normalized_y": 0.60
     }
   ],
   "tripura": [
@@ -270,8 +270,8 @@
       "info": "One of the 51 Shakti Peethas; temple houses a 5,000-year-old idol of Goddess Tripurasundari.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQA0dCif9ikmtkENGhcZ36x9v0WnJchTQL5g&usqp=CAU",
       "deity": "Durga",
-      "normalized_x": 0.88,
-      "normalized_y": 0.56
+      "normalized_x": 0.85,
+      "normalized_y": 0.48
     }
   ],
   "uttar_pradesh": [
@@ -282,7 +282,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK6mt4Qw0FrMhKJJzkAx8gDDCRhBjDTk4IZA&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.58,
-      "normalized_y": 0.46
+      "normalized_y": 0.44
     }
   ],
   "uttarakhand": [
@@ -293,7 +293,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjSNZxO2scgzpHwiY5YP_v53JEOijc5N_thA&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.52,
-      "normalized_y": 0.35
+      "normalized_y": 0.30
     }
   ],
   "west_bengal": [
@@ -304,7 +304,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5R8T_1sTR1-lGXQrRk6tIZCLFnw7tVqGhGA&usqp=CAU",
       "deity": "Kali",
       "normalized_x": 0.72,
-      "normalized_y": 0.54
+      "normalized_y": 0.52
     }
   ],
   "andaman_and_nicobar_islands": [
@@ -315,7 +315,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Z_tO7uOGRcnSLU6uiMMwHPVUGA9Dg1_dbg&usqp=CAU",
       "deity": "Murugan",
       "normalized_x": 0.80,
-      "normalized_y": 0.90
+      "normalized_y": 0.85
     }
   ],
   "chandigarh": [
@@ -326,7 +326,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzc-NjWd23dg7yCV0eeUG8u-qg2xnEmQ_qOg&usqp=CAU",
       "deity": "Durga",
       "normalized_x": 0.45,
-      "normalized_y": 0.38
+      "normalized_y": 0.28
     }
   ],
   "dadra_and_nagar_haveli_and_daman_and_diu": [
@@ -337,7 +337,7 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQW-ZUgfuYMTWzVBEJq19j-d-S8-qiPFuCsQ&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.30,
-      "normalized_y": 0.62
+      "normalized_y": 0.55
     }
   ],
   "delhi": [
@@ -347,8 +347,8 @@
       "info": "Modern masterpiece of Hindu architecture inaugurated in 2005, dedicated to Swaminarayan.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWUfKdLLhBj8OfzQt--6bWPg6D83De1ahFXw&usqp=CAU",
       "deity": "Swaminarayan",
-      "normalized_x": 0.50,
-      "normalized_y": 0.40
+      "normalized_x": 0.46,
+      "normalized_y": 0.35
     }
   ],
   "jammu_and_kashmir": [
@@ -358,7 +358,7 @@
       "info": "Sacred Himalayan cave shrine where the ice Shiva Lingam forms naturally each year.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXyGX7CgH7X_GyXvu3QZFkghVjwsLB3YVuZg&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.45,
+      "normalized_x": 0.42,
       "normalized_y": 0.20
     }
   ],
@@ -369,7 +369,7 @@
       "info": "Largest and wealthiest monastery in Ladakh, associated with Guru Padmasambhava.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8Utr4YEOLXJYXyhbHIXmFmY9B5qx-Ty5w&usqp=CAU",
       "deity": "Buddha",
-      "normalized_x": 0.40,
+      "normalized_x": 0.45,
       "normalized_y": 0.18
     }
   ],
@@ -391,8 +391,8 @@
       "info": "Historic temple dedicated to Ganesha, predating French colonial era.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-rqfTyj_xnHOUWhjN1pTUb3HhLN-rPnuPUg&usqp=CAU",
       "deity": "Ganesha",
-      "normalized_x": 0.56,
-      "normalized_y": 0.80
+      "normalized_x": 0.54,
+      "normalized_y": 0.76
     }
   ]
 }
