@@ -1,0 +1,126 @@
+/* ==========================
+   App.css — Temple Map Project
+   ========================== */
+
+:root {
+  --bg: #fffaf3;
+  --panel: #fff8ef;
+  --accent: #b55a1f;
+  --muted: #6b553a;
+  --glass: rgba(255,255,255,0.85);
+  --shadow: 0 8px 24px rgba(30,20,10,0.12);
+  --font: 'Inter', system-ui, sans-serif;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  background: linear-gradient(180deg, var(--bg), #fff);
+  color: var(--muted);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Top bar */
+.topbar {
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 18px 24px;
+  text-align: left;
+}
+
+.topbar h1 {
+  font-size: 1.5rem;
+  color: #3b2b1b;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #6f5840;
+}
+
+/* Main area */
+.main-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+}
+
+/* Footer */
+.footer {
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 13px;
+  color: #8a6f52;
+}
+
+/* Map wrapper */
+.map-wrapper {
+  width: min(1100px, 95vw);
+  aspect-ratio: 1/1;
+  background: linear-gradient(180deg, #fff, #fff9f0);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+/* SVG styles */
+.india-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.states path {
+  fill: #f6d9b3;
+  stroke: #c88c3a;
+  stroke-width: 3;
+  transition: transform 0.18s ease, filter 0.18s ease, fill 0.18s ease;
+}
+
+.states path:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 12px 20px rgba(160,90,30,0.25));
+  fill: #ffd9a6;
+  cursor: pointer;
+}
+
+/* Legend */
+.legend {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  background: var(--glass);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  box-shadow: 0 6px 18px rgba(20,10,0,0.06);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .map-wrapper {
+    aspect-ratio: auto;
+    height: 80vh;
+  }
+  .topbar {
+    text-align: center;
+  }
+}
