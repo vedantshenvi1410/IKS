@@ -1,294 +1,156 @@
+// src/components/StateView.jsx
 import React, { useEffect, useRef, useState } from "react";
 import indiaSVG from "../assets/in.svg";
-import "./StateView.css";
 
 export default function StateView({ stateId, temples = [], onBack }) {
   const containerRef = useRef(null);
-  const [svgContent, setSvgContent] = useState("");
-  const [loaded, setLoaded] = useState(false);
+  const [selectedTemple, setSelectedTemple] = useState(null);
 
-  // load raw svg text
   useEffect(() => {
     let cancelled = false;
-    async function load() {
+
+    async function initMap() {
       try {
         const res = await fetch(indiaSVG);
         const text = await res.text();
-        if (!cancelled) setSvgContent(text);
-      } catch (err) {
-        console.error("Failed to load SVG:", err);
-      }
-    }
-    load();
-    return () => { cancelled = true; };
-  }, []);
+        if (cancelled || !containerRef.current) return;
 
-  // After svg html is injected, do DOM operations: find viewBox, state bbox, draw markers, set viewBox to zoomed area
-  useEffect(() => {
-    if (!svgContent) return;
-    const container = containerRef.current;
-    if (!container) return;
-
-    // inject svg content
-    container.innerHTML = svgContent;
-
-    // small timeout to ensure DOM parsing of innerHTML is done
-    // (not async background work — immediate, just micro-delay)
-    requestAnimationFrame(() => {
-      const svg = container.querySelector("svg");
-      if (!svg) {
-        console.error("No <svg> found in loaded content.");
-        return;
-      }
-
-      // Read original viewBox (used to compute marker positions)
-      // If viewBox missing, try to build one from width/height attributes.
-      let origViewBox = { minX: 0, minY: 0, width: 1000, height: 1000 };
-      const vb = svg.getAttribute("viewBox");
-      if (vb) {
-        const parts = vb.split(/\s+|,/).map(Number);
-        if (parts.length === 4 && parts.every(n => !Number.isNaN(n))) {
-          origViewBox = { minX: parts[0], minY: parts[1], width: parts[2], height: parts[3] };
-        }
-      } else {
-        // fallback: try width/height attributes
-        const w = parseFloat(svg.getAttribute("width")) || 1000;
-        const h = parseFloat(svg.getAttribute("height")) || 1000;
-        origViewBox = { minX: 0, minY: 0, width: w, height: h };
-        svg.setAttribute("viewBox", `0 0 ${origViewBox.width} ${origViewBox.height}`);
-      }
-
-      // remove any old overlay group we added previously
-      let overlay = svg.querySelector("#__temple_overlay");
-      if (overlay) overlay.remove();
-
-      // create overlay g for markers on top of map paths
-      overlay = document.createElementNS("http://www.w3.org/2000/svg", "g");
-      overlay.setAttribute("id", "__temple_overlay");
-      overlay.setAttribute("pointer-events", "none"); // let clicks pass to map unless markers set pointer-events
-      svg.appendChild(overlay);
-
-      // attempt to find the path for the selected state
-      const statePath = svg.getElementById(stateId);
-      if (!statePath) {
-        console.warn(`No path with id="${stateId}" found in SVG.`);
-      } else {
-        // compute bounding box of the state in svg coordinate space
-        // getBBox must be called on an element inside the DOM
-        try {
+        // 1. Inject SVG
+        containerRef.current.innerHTML = text;
+        const svg = containerRef.current.querySelector("svg");
+        
+        // 2. Handle ViewBox Logic
+        // We want to zoom into the specific state
+        const statePath = svg.getElementById(stateId);
+        if (statePath) {
           const bbox = statePath.getBBox();
-          // add padding (as fraction of bbox)
-          const padFactor = 0.1; // increase to show context; reduce to zoom more
-          const padX = bbox.width * padFactor;
-          const padY = bbox.height * padFactor;
-
-          const newMinX = bbox.x - padX;
-          const newMinY = bbox.y - padY;
-          const newW = bbox.width + padX * 2;
-          const newH = bbox.height + padY * 2;
-
-          // maintain aspect ratio of original viewbox while fitting the new region
-          const origRatio = origViewBox.width / origViewBox.height;
-          let finalW = newW;
-          let finalH = newH;
-          if (newW / newH > origRatio) {
-            // wider than svg, expand height
-            finalH = newW / origRatio;
-            // center vertically
-            const extraH = finalH - newH;
-            // adjust minY to center
-            svg.setAttribute("viewBox", `${newMinX} ${newMinY - extraH / 2} ${finalW} ${finalH}`);
-          } else {
-            // taller than svg, expand width
-            finalW = newH * origRatio;
-            const extraW = finalW - newW;
-            svg.setAttribute("viewBox", `${newMinX - extraW / 2} ${newMinY} ${finalW} ${finalH}`);
-          }
-
-          // If the two branches above didn't set viewBox (edge case), ensure it's set
-          if (!svg.getAttribute("viewBox")) {
-            svg.setAttribute("viewBox", `${newMinX} ${newMinY} ${finalW} ${finalH}`);
-          }
-
-          // add CSS class to dim other states and highlight selected
-          // we add a class to svg root and also set a style block if not present
-          svg.classList.add("__state_focused_svg");
-
-          // ensure selected state has higher opacity & drop shadow by setting attributes or classes
-          // We'll set an inline style to guarantee effect
-          const allPaths = svg.querySelectorAll("path");
-          allPaths.forEach(p => {
-            // make others dim
-            if (p === statePath) {
-              p.style.opacity = "1";
-              p.style.filter = "drop-shadow(0 4px 6px rgba(0,0,0,0.35))";
+          // Add 15% padding
+          const padX = bbox.width * 0.15;
+          const padY = bbox.height * 0.15;
+          const viewBoxStr = `${bbox.x - padX} ${bbox.y - padY} ${bbox.width + padX*2} ${bbox.height + padY*2}`;
+          
+          // Animate transition (CSS handled in global)
+          svg.style.transition = 'viewBox 1s ease';
+          svg.setAttribute("viewBox", viewBoxStr);
+          
+          // Dim other states
+          svg.querySelectorAll("path").forEach(p => {
+            if (p.id !== stateId) {
+              p.style.fill = "#eee";
+              p.style.opacity = "0.3";
+              p.style.pointerEvents = "none";
             } else {
-              p.style.opacity = "0.25";
+              p.style.fill = "#fff"; // Highlight selected
+              p.style.stroke = "#d35400";
+              p.style.strokeWidth = "0.5";
+              p.style.filter = "drop-shadow(0 4px 6px rgba(0,0,0,0.1))";
             }
           });
-        } catch (err) {
-          console.warn("Could not compute bbox for state path:", err);
         }
-      }
 
-      // draw temple markers using normalized coordinates relative to the ORIGINAL viewBox
-      // (so marker placement doesn't break when we change the viewBox to zoom)
-      temples.forEach((t, idx) => {
-        const nx = typeof t.normalized_x === "number" ? t.normalized_x : 0.5; // 0..1
-        const ny = typeof t.normalized_y === "number" ? t.normalized_y : 0.5; // 0..1
+        // 3. Render Markers (The "Real" Location Fix)
+        // We grab the ORIGINAL viewBox to calculate absolute coordinates from normalized JSON
+        const vbAttr = svg.getAttribute("viewBox") || "0 0 1000 1000";
+        const [vx, vy, vw,vh] = vbAttr.split(" ").map(Number);
+        
+        // Since we changed the viewBox above, we need the ORIGINAL dimensions for mapping 0..1 coordinates
+        // Assuming standard India SVG is roughly 0 0 612 695 or similar. 
+        // We'll use the initial attributes usually found on the SVG or assume standard bounds.
+        // NOTE: For best results, normalized_x/y in JSON should match the SVG's coordinate system.
+        // Here we map 0-1 to the full original width/height.
+        
+        const originalWidth = svg.getAttribute('width') ? parseFloat(svg.getAttribute('width')) : 612; // Fallback
+        const originalHeight = svg.getAttribute('height') ? parseFloat(svg.getAttribute('height')) : 695; // Fallback
 
-        // compute absolute svg coordinates using orig viewBox
-        const absX = origViewBox.minX + nx * origViewBox.width;
-        const absY = origViewBox.minY + ny * origViewBox.height;
+        // Create a group for markers
+        const markerGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        
+        temples.forEach((t) => {
+          // Calculate SVG Position
+          // Note: If your JSON coords are 0-1, we multiply by original dimensions
+          // If the JSON coords are "globally accurate", this puts the pin on the map.
+          const x = (t.normalized_x || 0.5) * 1000; // Assuming 1000x1000 coordinate space normalization in JSON
+          const y = (t.normalized_y || 0.5) * 1000; 
 
-        const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        g.setAttribute("class", "temple-marker");
-        g.setAttribute("transform", `translate(${absX}, ${absY})`);
-        g.setAttribute("pointer-events", "all"); // enable clicking on marker
+          // Create Pin Group
+          const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          g.setAttribute("class", "pin-marker");
+          g.setAttribute("transform", `translate(${x}, ${y})`);
+          g.style.cursor = "pointer";
+          
+          // Add Click Listener
+          g.onclick = (e) => {
+            e.stopPropagation();
+            setSelectedTemple(t);
+          };
 
-        // circle
-        const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        c.setAttribute("r", "9");
-        c.setAttribute("fill", "#d90429");
-        c.setAttribute("stroke", "#fff");
-        c.setAttribute("stroke-width", "2");
-        c.style.cursor = "pointer";
+          // Pin Icon (Path) - An upside down tear drop
+          const pinPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          // A nice pin shape path centered at 0,0 (bottom tip)
+          pinPath.setAttribute("d", "M0,0 C-5,-10 -10,-15 -10,-22 C-10,-28 -5,-32 0,-32 C5,-32 10,-28 10,-22 C10,-15 5,-10 0,0");
+          pinPath.setAttribute("class", "pin-body");
 
-        // small label (first word)
-        const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        txt.setAttribute("y", "-14");
-        txt.setAttribute("text-anchor", "middle");
-        txt.setAttribute("class", "marker-label");
-        txt.textContent = (t.name || "").split(" ")[0];
+          // Inner Dot
+          const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          dot.setAttribute("cx", "0");
+          dot.setAttribute("cy", "-22");
+          dot.setAttribute("r", "3");
+          dot.setAttribute("class", "pin-dot");
 
-        g.appendChild(c);
-        g.appendChild(txt);
+          // Animation Delay
+          g.style.opacity = "0";
+          g.style.animation = "slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards";
+          g.style.animationDelay = "0.5s"; // Wait for zoom to start
 
-        // click handler to open a simple popup (implemented below)
-        g.addEventListener("click", (ev) => {
-          ev.stopPropagation();
-          // dispatch a custom event with temple data so React can catch it
-          const detail = { temple: t };
-          svg.dispatchEvent(new CustomEvent("__temple_click", { detail }));
+          g.appendChild(pinPath);
+          g.appendChild(dot);
+          markerGroup.appendChild(g);
         });
 
-        overlay.appendChild(g);
-      });
+        svg.appendChild(markerGroup);
 
-      // create (or remove old) popup container element in DOM if not present
-      let popup = container.querySelector("#__temple_popup");
-      if (!popup) {
-        popup = document.createElement("div");
-        popup.id = "__temple_popup";
-        popup.className = "state-temple-popup";
-        // attach empty hidden div for React-free popup — we'll let React control display via event listener
-        popup.style.display = "none";
-        container.appendChild(popup);
-      }
-
-      setLoaded(true);
-    });
-  }, [svgContent, stateId, temples]);
-
-  // react state for selected temple popup showing (we listen for the custom event dispatched on svg)
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const svg = container.querySelector("svg");
-    if (!svg) return;
-
-    function onTempleClick(e) {
-      const { temple } = e.detail || {};
-      if (temple) {
-        setSelectedTemple(temple);
+      } catch (err) {
+        console.error("State View Error:", err);
       }
     }
 
-    svg.addEventListener("__temple_click", onTempleClick);
-    return () => svg.removeEventListener("__temple_click", onTempleClick);
-  }, [svgContent]);
+    initMap();
 
-  // local state for popup
-  const [selectedTemple, setSelectedTemple] = useState(null);
+    return () => { cancelled = true; };
+  }, [stateId, temples]);
 
   return (
-    <div className="state-view">
-      <button className="back-btn" onClick={onBack}>← Back to India</button>
-
-      <h2 className="state-title">{stateId.replaceAll("_", " ").toUpperCase()}</h2>
-
-      <div className="state-svg-wrap" style={{ position: "relative" }}>
-        <div
-          ref={containerRef}
-          className="india-map"
-          style={{ width: "100%", maxWidth: 900, margin: "0 auto" }}
-          // svg injected into this div
-        />
+    <div className="state-view-container">
+      <div className="state-header">
+        <h2 className="state-name">{stateId.replace(/_/g, " ")}</h2>
+        <button className="back-btn" onClick={onBack}>
+          &larr; Back to India
+        </button>
       </div>
 
-      <div className="temple-list">
-        <h3>Temples in {stateId.replaceAll("_", " ")}</h3>
-        {temples.length > 0 ? (
-          <ul>
-            {temples.map((t, i) => (
-              <li key={i}>
-                <button onClick={() => setSelectedTemple(t)}>
-                  {t.name} — {t.location}
-                </button>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="no-temples">No temple data available for this state.</p>
-        )}
+      <div className="interactive-area" ref={containerRef}>
+        {/* SVG injected here */}
       </div>
 
-      {/* Popup modal for temple info */}
+      {/* Temple Details Modal */}
       {selectedTemple && (
-        <div className="popup-overlay" onClick={() => setSelectedTemple(null)}>
-          <div className="popup-content" onClick={e => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setSelectedTemple(null)}>×</button>
-            <h2>{selectedTemple.name}</h2>
-            <p><strong>Location:</strong> {selectedTemple.location}</p>
+        <div className="modal-overlay" onClick={() => setSelectedTemple(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={() => setSelectedTemple(null)}>×</button>
+            <h3 className="modal-title">{selectedTemple.name}</h3>
             <p><strong>Deity:</strong> {selectedTemple.deity}</p>
-            <p>{selectedTemple.info}</p>
-            {selectedTemple.image_url && <img className="temple-img" src={selectedTemple.image_url} alt={selectedTemple.name} />}
+            <p><strong>Location:</strong> {selectedTemple.location}</p>
+            {selectedTemple.image_url && (
+              <img 
+                src={selectedTemple.image_url} 
+                alt={selectedTemple.name} 
+                className="modal-img"
+              />
+            )}
+            <p style={{ lineHeight: '1.6', color: '#555' }}>{selectedTemple.info}</p>
           </div>
         </div>
       )}
-
-      <style>{`
-        /* basic styles - tweak in your StateView.css as needed */
-        .state-svg-wrap { margin-bottom: 1rem; }
-        .india-map svg { width: 100%; height: auto; display: block; transition: viewBox 300ms ease; }
-
-        /* dim non-selected states and highlight selected handled inline, but here's fallback styling */
-        .temple-marker circle { transition: transform 0.15s ease; }
-        .temple-marker:hover circle { transform: scale(1.3); }
-        .marker-label { font-family: system-ui; font-size: 32px; font-weight:600; fill: #000000ff; pointer-events: none; }
-
-        /* popup */
-        .popup-overlay {
-          position: fixed;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: rgba(0,0,0,0.45);
-          z-index: 9999;
-        }
-        .popup-content {
-          background: white;
-          padding: 1rem 1.25rem;
-          border-radius: 10px;
-          max-width: 640px;
-          width: 90%;
-          box-shadow: 0 8px 28px rgba(0,0,0,0.25);
-          position: relative;
-        }
-        .close-btn { position: absolute; right: 8px; top: 8px; background: none; border: none; font-size: 20px; cursor: pointer; }
-        .temple-img { max-width: 100%; height: auto; margin-top: 0.75rem; border-radius: 6px; }
-      `}</style>
     </div>
   );
 }
