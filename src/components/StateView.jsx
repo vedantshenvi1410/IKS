@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import indiaSVG from "../assets/in.svg";
 import "./StateView.css";
 
-export default function StateView({ stateId, temples = [], onBack }) {
+export default function StateView({ stateKey, svgId, temples = [], onBack }) {
   const containerRef = useRef(null);
   const [svgContent, setSvgContent] = useState("");
   const [loaded, setLoaded] = useState(false);
@@ -33,7 +33,6 @@ export default function StateView({ stateId, temples = [], onBack }) {
     container.innerHTML = svgContent;
 
     // small timeout to ensure DOM parsing of innerHTML is done
-    // (not async background work — immediate, just micro-delay)
     requestAnimationFrame(() => {
       const svg = container.querySelector("svg");
       if (!svg) {
@@ -42,7 +41,6 @@ export default function StateView({ stateId, temples = [], onBack }) {
       }
 
       // Read original viewBox (used to compute marker positions)
-      // If viewBox missing, try to build one from width/height attributes.
       let origViewBox = { minX: 0, minY: 0, width: 1000, height: 1000 };
       const vb = svg.getAttribute("viewBox");
       if (vb) {
@@ -51,7 +49,6 @@ export default function StateView({ stateId, temples = [], onBack }) {
           origViewBox = { minX: parts[0], minY: parts[1], width: parts[2], height: parts[3] };
         }
       } else {
-        // fallback: try width/height attributes
         const w = parseFloat(svg.getAttribute("width")) || 1000;
         const h = parseFloat(svg.getAttribute("height")) || 1000;
         origViewBox = { minX: 0, minY: 0, width: w, height: h };
@@ -65,20 +62,17 @@ export default function StateView({ stateId, temples = [], onBack }) {
       // create overlay g for markers on top of map paths
       overlay = document.createElementNS("http://www.w3.org/2000/svg", "g");
       overlay.setAttribute("id", "__temple_overlay");
-      overlay.setAttribute("pointer-events", "none"); // let clicks pass to map unless markers set pointer-events
+      overlay.setAttribute("pointer-events", "none");
       svg.appendChild(overlay);
 
-      // attempt to find the path for the selected state
-      const statePath = svg.getElementById(stateId);
+      // attempt to find the path for the selected state using the SVG ID (e.g., INKA)
+      const statePath = svg.getElementById(svgId);
       if (!statePath) {
-        console.warn(`No path with id="${stateId}" found in SVG.`);
+        console.warn(`No path with id="${svgId}" found in SVG.`);
       } else {
-        // compute bounding box of the state in svg coordinate space
-        // getBBox must be called on an element inside the DOM
         try {
           const bbox = statePath.getBBox();
-          // add padding (as fraction of bbox)
-          const padFactor = 0.1; // increase to show context; reduce to zoom more
+          const padFactor = 0.1;
           const padX = bbox.width * padFactor;
           const padY = bbox.height * padFactor;
 
@@ -87,38 +81,27 @@ export default function StateView({ stateId, temples = [], onBack }) {
           const newW = bbox.width + padX * 2;
           const newH = bbox.height + padY * 2;
 
-          // maintain aspect ratio of original viewbox while fitting the new region
           const origRatio = origViewBox.width / origViewBox.height;
           let finalW = newW;
           let finalH = newH;
           if (newW / newH > origRatio) {
-            // wider than svg, expand height
             finalH = newW / origRatio;
-            // center vertically
             const extraH = finalH - newH;
-            // adjust minY to center
             svg.setAttribute("viewBox", `${newMinX} ${newMinY - extraH / 2} ${finalW} ${finalH}`);
           } else {
-            // taller than svg, expand width
             finalW = newH * origRatio;
             const extraW = finalW - newW;
             svg.setAttribute("viewBox", `${newMinX - extraW / 2} ${newMinY} ${finalW} ${finalH}`);
           }
 
-          // If the two branches above didn't set viewBox (edge case), ensure it's set
           if (!svg.getAttribute("viewBox")) {
             svg.setAttribute("viewBox", `${newMinX} ${newMinY} ${finalW} ${finalH}`);
           }
 
-          // add CSS class to dim other states and highlight selected
-          // we add a class to svg root and also set a style block if not present
           svg.classList.add("__state_focused_svg");
 
-          // ensure selected state has higher opacity & drop shadow by setting attributes or classes
-          // We'll set an inline style to guarantee effect
           const allPaths = svg.querySelectorAll("path");
           allPaths.forEach(p => {
-            // make others dim
             if (p === statePath) {
               p.style.opacity = "1";
               p.style.filter = "drop-shadow(0 4px 6px rgba(0,0,0,0.35))";
@@ -132,21 +115,18 @@ export default function StateView({ stateId, temples = [], onBack }) {
       }
 
       // draw temple markers using normalized coordinates relative to the ORIGINAL viewBox
-      // (so marker placement doesn't break when we change the viewBox to zoom)
-      temples.forEach((t, idx) => {
-        const nx = typeof t.normalized_x === "number" ? t.normalized_x : 0.5; // 0..1
-        const ny = typeof t.normalized_y === "number" ? t.normalized_y : 0.5; // 0..1
+      temples.forEach((t) => {
+        const nx = typeof t.normalized_x === "number" ? t.normalized_x : 0.5;
+        const ny = typeof t.normalized_y === "number" ? t.normalized_y : 0.5;
 
-        // compute absolute svg coordinates using orig viewBox
         const absX = origViewBox.minX + nx * origViewBox.width;
         const absY = origViewBox.minY + ny * origViewBox.height;
 
         const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
         g.setAttribute("class", "temple-marker");
         g.setAttribute("transform", `translate(${absX}, ${absY})`);
-        g.setAttribute("pointer-events", "all"); // enable clicking on marker
+        g.setAttribute("pointer-events", "all");
 
-        // circle
         const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         c.setAttribute("r", "9");
         c.setAttribute("fill", "#d90429");
@@ -154,7 +134,6 @@ export default function StateView({ stateId, temples = [], onBack }) {
         c.setAttribute("stroke-width", "2");
         c.style.cursor = "pointer";
 
-        // small label (first word)
         const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
         txt.setAttribute("y", "-14");
         txt.setAttribute("text-anchor", "middle");
@@ -164,10 +143,8 @@ export default function StateView({ stateId, temples = [], onBack }) {
         g.appendChild(c);
         g.appendChild(txt);
 
-        // click handler to open a simple popup (implemented below)
         g.addEventListener("click", (ev) => {
           ev.stopPropagation();
-          // dispatch a custom event with temple data so React can catch it
           const detail = { temple: t };
           svg.dispatchEvent(new CustomEvent("__temple_click", { detail }));
         });
@@ -175,22 +152,19 @@ export default function StateView({ stateId, temples = [], onBack }) {
         overlay.appendChild(g);
       });
 
-      // create (or remove old) popup container element in DOM if not present
       let popup = container.querySelector("#__temple_popup");
       if (!popup) {
         popup = document.createElement("div");
         popup.id = "__temple_popup";
         popup.className = "state-temple-popup";
-        // attach empty hidden div for React-free popup — we'll let React control display via event listener
         popup.style.display = "none";
         container.appendChild(popup);
       }
 
       setLoaded(true);
     });
-  }, [svgContent, stateId, temples]);
+  }, [svgContent, svgId, temples]);
 
-  // react state for selected temple popup showing (we listen for the custom event dispatched on svg)
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -208,26 +182,24 @@ export default function StateView({ stateId, temples = [], onBack }) {
     return () => svg.removeEventListener("__temple_click", onTempleClick);
   }, [svgContent]);
 
-  // local state for popup
   const [selectedTemple, setSelectedTemple] = useState(null);
 
   return (
     <div className="state-view">
       <button className="back-btn" onClick={onBack}>← Back to India</button>
 
-      <h2 className="state-title">{stateId.replaceAll("_", " ").toUpperCase()}</h2>
+      <h2 className="state-title">{stateKey.replaceAll("_", " ").toUpperCase()}</h2>
 
       <div className="state-svg-wrap" style={{ position: "relative" }}>
         <div
           ref={containerRef}
           className="india-map"
           style={{ width: "100%", maxWidth: 900, margin: "0 auto" }}
-          // svg injected into this div
         />
       </div>
 
       <div className="temple-list">
-        <h3>Temples in {stateId.replaceAll("_", " ")}</h3>
+        <h3>Temples in {stateKey.replaceAll("_", " ")}</h3>
         {temples.length > 0 ? (
           <ul>
             {temples.map((t, i) => (
@@ -243,7 +215,6 @@ export default function StateView({ stateId, temples = [], onBack }) {
         )}
       </div>
 
-      {/* Popup modal for temple info */}
       {selectedTemple && (
         <div className="popup-overlay" onClick={() => setSelectedTemple(null)}>
           <div className="popup-content" onClick={e => e.stopPropagation()}>
@@ -258,16 +229,11 @@ export default function StateView({ stateId, temples = [], onBack }) {
       )}
 
       <style>{`
-        /* basic styles - tweak in your StateView.css as needed */
         .state-svg-wrap { margin-bottom: 1rem; }
         .india-map svg { width: 100%; height: auto; display: block; transition: viewBox 300ms ease; }
-
-        /* dim non-selected states and highlight selected handled inline, but here's fallback styling */
         .temple-marker circle { transition: transform 0.15s ease; }
         .temple-marker:hover circle { transform: scale(1.3); }
         .marker-label { font-family: system-ui; font-size: 32px; font-weight:600; fill: #000000ff; pointer-events: none; }
-
-        /* popup */
         .popup-overlay {
           position: fixed;
           inset: 0;

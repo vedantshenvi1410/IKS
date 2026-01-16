@@ -44,13 +44,15 @@ const stateIdMap = {
 };
 
 export default function App() {
-  const [selectedState, setSelectedState] = useState(null);
+  const [selectedState, setSelectedState] = useState(null); // stores normalized ID (e.g., 'karnataka')
+  const [selectedSvgId, setSelectedSvgId] = useState(null); // stores SVG ID (e.g., 'INKA')
 
   const handleStateClick = (svgId) => {
     const normalizedId = stateIdMap[svgId.toUpperCase()];
     console.log('SVG clicked:', svgId, 'Mapped ID:', normalizedId);
     if (normalizedId && templesData[normalizedId]) {
       setSelectedState(normalizedId);
+      setSelectedSvgId(svgId);
     } else {
       console.warn(`No temple data found for: ${svgId}`);
     }
@@ -58,17 +60,17 @@ export default function App() {
 
   const handleBack = () => {
     setSelectedState(null);
+    setSelectedSvgId(null);
   };
 
   const handleSelectTemple = (temple) => {
     alert(`Selected: ${temple.name} — ${temple.location}`);
-    // later, open modal or navigate to temple details
   };
 
   return (
     <div className="app-root">
       <header className="topbar">
-        {/* <h1>Interactive Map of Ancient Indian Temples</h1>
+         {/* <h1>Interactive Map of Ancient Indian Temples</h1>
         <p className="subtitle">Explore India’s sacred heritage by state</p> */}
       </header>
 
@@ -77,7 +79,8 @@ export default function App() {
           <IndiaMap onStateClick={handleStateClick} />
         ) : (
           <StateView
-            stateId={selectedState}
+            stateKey={selectedState}
+            svgId={selectedSvgId}
             temples={templesData[selectedState] || []}
             onBack={handleBack}
             onSelectTemple={handleSelectTemple}

@@ -3,18 +3,18 @@
     {
       "name": "Venkateswara Temple",
       "location": "Tirupati",
-      "info": "Located on the Seshachalam Hills, this Dravidian-style temple is revered as 'Kaliyuga Vaikuntham'. Dedicated to Lord Venkateswara (Vishnu), it is managed by the Tirumala Tirupati Devasthanams (TTD) and is one of the wealthiest and most visited religious sites globally. Famous for its 'Suprabhata' ritual and the Brahmotsavam festival.",
+      "info": "Located on the Seshachalam Hills, dedicated to Lord Venkateswara.",
       "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEituw1wwqvcJ8Z2ipzHPkN9hZHQt02zPyckkPNeJI1DsDQ8bwxQ4YhdcRYXsOG1b6QUiowRdVT94IDHs4F6cKPSYnvC6AuNXGHRHIJGRKIU3Oz16AFrblnDWHbpkhDIJ_8pCBJAl_k7i5s/s1600/2017-03-23.jpg",
       "deity": "Venkateswara (Vishnu)",
       "normalized_x": 0.52,
-      "normalized_y": 0.70
+      "normalized_y": 0.74
     }
   ],
   "arunachal_pradesh": [
     {
       "name": "Malinithan Temple Ruins",
       "location": "West Siang",
-      "info": "Early-medieval ruins (c. 13th–14th century) at the foot of the Siang hills, featuring fine granite sculptures of Hindu deities (Indra, Surya, Ganesha) and syncretic worship of tribal goddess Kechai-Khaiti. The site is linked to Krishna-Rukmini legends and is managed locally with state government support.",
+      "info": "Early-medieval ruins at the foot of the Siang hills.",
       "image_url": "https://arunachal24.in/wp-content/uploads/2020/11/Malinithan-temple-4.jpg.webp",
       "deity": "Krishna & Rukmini",
       "normalized_x": 0.88,
@@ -25,54 +25,54 @@
     {
       "name": "Kamakhya Temple",
       "location": "Guwahati",
-      "info": "Situated on Nilachal Hill, this is one of the oldest and most significant Shakti Peethas, famous for its unique 'Nilachal' dome architecture and the annual Ambubachi Mela celebrating the goddess's menstruation. The sanctum features a natural rock fissure worshipped as the yoni of Shakti.",
+      "info": "One of the oldest and most significant Shakti Peethas.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-lX0YqRf2xg4cCfNNJilmxxjnxwNzRdczKw&usqp=CAU",
       "deity": "Kamakhya (Parvati)",
       "normalized_x": 0.82,
-      "normalized_y": 0.40
+      "normalized_y": 0.42
     }
   ],
   "bihar": [
     {
       "name": "Mahabodhi Temple",
       "location": "Bodh Gaya",
-      "info": "A UNESCO World Heritage Site marking where Buddha attained enlightenment. The current 5th–6th-century brick temple houses the Vajrasana (diamond throne) and the sacred Bodhi Tree. It is managed by the Bodhgaya Temple Management Committee.",
+      "info": "A UNESCO World Heritage Site marking where Buddha attained enlightenment.",
       "image_url": "https://sabrangindia.in/wp-content/uploads/2025/03/Mahabodhi_Temple_Complex_511d2e9a47.webp",
       "deity": "Buddha",
-      "normalized_x": 0.65,
-      "normalized_y": 0.45
+      "normalized_x": 0.62,
+      "normalized_y": 0.46
     }
   ],
   "chhattisgarh": [
     {
       "name": "Bhoramdeo Temple",
       "location": "Kawardha",
-      "info": "Known as the 'Khajuraho of Chhattisgarh', this 11th-century Shiva temple features intricate erotic sculptures and Nagara-style architecture. Set near the Maikal hills, it is managed by state tourism/culture bodies and a local committee.",
+      "info": "Known as the 'Khajuraho of Chhattisgarh'.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb-KCtNdO0_Semwre1TMFYh5uQCGR9PcokEA&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.55,
-      "normalized_y": 0.50
+      "normalized_x": 0.56,
+      "normalized_y": 0.55
     }
   ],
   "goa": [
     {
       "name": "Tambdi Surla Mahadev Temple",
       "location": "Sanguem",
-      "info": "A 12th-century Kadamba-style Shiva temple built from basalt, located within the Bhagwan Mahavir Wildlife Sanctuary. It is the oldest surviving stone temple in Goa, known for its intricate carvings and secluded forest setting.",
+      "info": "A 12th-century Kadamba-style Shiva temple built from basalt.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzdj_Q2Nikbvas2vfatXSa40jFybSAeWu6rw&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.35,
-      "normalized_y": 0.68
+      "normalized_x": 0.38,
+      "normalized_y": 0.70
     }
   ],
   "gujarat": [
     {
       "name": "Somnath Temple",
       "location": "Prabhas Patan",
-      "info": "Venerated as the first of the 12 Jyotirlingas, this coastal temple has been destroyed and rebuilt multiple times, symbolizing resilience. The current structure was completed in 1951 and is managed by the Shree Somnath Trust.",
+      "info": "Venerated as the first of the 12 Jyotirlingas.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy881HE9RZvM3ELyHqRJA3CrmHGfhzeYZhyQ&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.28,
+      "normalized_x": 0.25,
       "normalized_y": 0.52
     }
   ],
@@ -80,10 +80,10 @@
     {
       "name": "Kurukshetra Brahma Sarovar",
       "location": "Kurukshetra",
-      "info": "A vast man-made sacred tank associated with Lord Brahma and the Mahabharata. It is famous for the massive congregation of pilgrims during solar eclipses and the annual International Gita Mahotsav. Managed by the Kurukshetra Development Board.",
+      "info": "A vast man-made sacred tank associated with Lord Brahma.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ2hl1CxaGgYO5uh9iKix9-TOX7LQstw4cYA&usqp=CAU",
       "deity": "Vishnu/Brahma",
-      "normalized_x": 0.46,
+      "normalized_x": 0.44,
       "normalized_y": 0.30
     }
   ],
@@ -91,32 +91,32 @@
     {
       "name": "Baijnath Temple",
       "location": "Kangra",
-      "info": "A 13th-century Nagara-style Shiva temple housing a Swayambhu Lingam. Legend links it to Ravana's penance, resulting in no Dussehra celebrations in the town. It is an ASI-protected monument managed by a local trust.",
+      "info": "A 13th-century Nagara-style Shiva temple housing a Swayambhu Lingam.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs73Dj1pDKVmiHBIAcm-u1piiw6xME_gtclg&usqp=CAU",
       "deity": "Shiva (Vaidyanath)",
       "normalized_x": 0.45,
-      "normalized_y": 0.25
+      "normalized_y": 0.22
     }
   ],
   "jharkhand": [
     {
       "name": "Baidhyanath Dham",
       "location": "Deoghar",
-      "info": "A revered pilgrimage site that is both a Jyotirlinga and a Shakti Peetha. Famous for the Shravani Mela where pilgrims (Kanwariyas) offer holy water. Managed under a specific state act and shrine board.",
+      "info": "A revered pilgrimage site that is both a Jyotirlinga and a Shakti Peetha.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqGWKsWx4xCUzXpqZIgrcmZc2bUXNKxo47pg&usqp=CAU",
       "deity": "Shiva (Baidyanath)",
       "normalized_x": 0.64,
-      "normalized_y": 0.45
+      "normalized_y": 0.50
     }
   ],
   "karnataka": [
     {
       "name": "Hampi Virupaksha",
       "location": "Hampi",
-      "info": "The oldest active temple in the UNESCO-listed Hampi ruins, dedicated to Shiva (Virupaksha). Famous for its towering gopuram and the unique inverted shadow phenomenon in one of its chambers. Managed by a local body and state endowments department.",
+      "info": "The oldest active temple in the UNESCO-listed Hampi ruins.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz2ZFPGapnxrIwZ7H9Z4ZzIs-Cdcv1ugVa0Q&usqp=CAU",
       "deity": "Shiva (Virupaksha)",
-      "normalized_x": 0.40,
+      "normalized_x": 0.42,
       "normalized_y": 0.68
     }
   ],
@@ -124,76 +124,76 @@
     {
       "name": "Sabarimala Temple",
       "location": "Pathanamthitta",
-      "info": "A major pilgrimage site in the Western Ghats dedicated to Lord Ayyappa. Known for the rigorous 41-day 'Vratham' observed by pilgrims and the unique traditions related to the deity's celibate nature. Managed by the Travancore Devaswom Board.",
+      "info": "A major pilgrimage site in the Western Ghats dedicated to Lord Ayyappa.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ55scXw1egykZgM4o-93IxvfYlhiMkoPPt1A&usqp=CAU",
       "deity": "Ayyappa",
-      "normalized_x": 0.42,
-      "normalized_y": 0.80
+      "normalized_x": 0.43,
+      "normalized_y": 0.85
     }
   ],
   "madhya_pradesh": [
     {
       "name": "Khajuraho Temples",
       "location": "Chhatarpur",
-      "info": "UNESCO World Heritage Site famous for its Nagara-style architecture and exquisite sculptures, including erotic carvings. Built by the Chandela dynasty (c. 950–1050 AD), the Kandariya Mahadeva temple is the largest. Managed by the ASI.",
+      "info": "UNESCO World Heritage Site famous for its Nagara-style architecture.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8yMJ802PLY0wrnKl6t3C3Cnx2Jd0IzPUCw&usqp=CAU",
       "deity": "Various (Hindu & Jain)",
       "normalized_x": 0.53,
-      "normalized_y": 0.43
+      "normalized_y": 0.45
     }
   ],
   "maharashtra": [
     {
       "name": "Ellora Caves (Kailasa)",
       "location": "Ellora",
-      "info": "Home to the magnificent Kailasa Temple (Cave 16), the world's largest monolithic rock-cut structure, carved top-down from a single rock. Part of a UNESCO World Heritage complex featuring Hindu, Buddhist, and Jain caves. Managed by the ASI.",
+      "info": "Home to the magnificent Kailasa Temple (Cave 16).",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf18VJ6BPPULhhPcs7ATAhvp9mq6_NJxeRWg&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.40,
-      "normalized_y": 0.56
+      "normalized_y": 0.55
     }
   ],
   "manipur": [
     {
       "name": "Shree Govindajee Temple",
       "location": "Imphal",
-      "info": "The largest Vaishnava temple in Manipur, dedicated to Govindaji (Krishna). Built by royal patronage in the 19th century, it is central to Manipuri Vaishnavism and famous for its Raas Lila performances. Managed by a temple board headed by the Chief Minister.",
+      "info": "The largest Vaishnava temple in Manipur, dedicated to Govindaji (Krishna).",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbazszvMxniEyr7CV4nreo7S0JAsEJC4ddw&usqp=CAU",
       "deity": "Krishna (Govindaji)",
-      "normalized_x": 0.90,
-      "normalized_y": 0.44
+      "normalized_x": 0.88,
+      "normalized_y": 0.46
     }
   ],
   "meghalaya": [
     {
       "name": "Nartiang Durga Temple",
       "location": "Jaintia Hills",
-      "info": "A 500-year-old Shakti Peetha in the Jaintia Hills, blending Hindu and local Khasi traditions. Uniquely, during Durga Puja, a banana plant trunk is worshipped as the goddess instead of an idol. Historically patronized by Jaintia kings.",
+      "info": "A 500-year-old Shakti Peetha in the Jaintia Hills.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAu92Mmi6XSc5C7JUDwt1JU4NbK0hAKAKrpw&usqp=CAU",
       "deity": "Durga (Jainteshwari)",
-      "normalized_x": 0.86,
-      "normalized_y": 0.42
+      "normalized_x": 0.82,
+      "normalized_y": 0.44
     }
   ],
   "mizoram": [
     {
       "name": "Solomon's Temple",
       "location": "Aizawl",
-      "info": "A grand modern church complex in Aizawl, inspired by the biblical Temple of Solomon. It serves as a major religious and cultural landmark for the local Christian community (Kohhran Thianghlim).",
+      "info": "A grand modern church complex in Aizawl.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh10ddDEbG6vwJPP4lat9NJhGKtt2qsL-xBw&usqp=CAU",
       "deity": "Christian (Universal)",
-      "normalized_x": 0.88,
-      "normalized_y": 0.48
+      "normalized_x": 0.86,
+      "normalized_y": 0.52
     }
   ],
   "nagaland": [
     {
       "name": "Dimapur Kachari Ruins",
       "location": "Dimapur",
-      "info": "Medieval ruins of the Kachari Kingdom's capital, featuring mysterious mushroom-shaped monolithic pillars. It is an ASI-protected site showcasing the region's pre-Ahom history and architecture.",
+      "info": "Medieval ruins of the Kachari Kingdom's capital.",
       "image_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/62/13/76/pillars-at-kachari-ruins.jpg?w=800&h=-1&s=1",
       "deity": "Ancestral/Historical",
-      "normalized_x": 0.90,
+      "normalized_x": 0.89,
       "normalized_y": 0.40
     }
   ],
@@ -201,7 +201,7 @@
     {
       "name": "Konark Sun Temple",
       "location": "Konark",
-      "info": "13th-century CE Sun temple, famous for its chariot-shaped architecture and stone wheels.",
+      "info": "13th-century CE Sun temple, famous for its chariot-shaped architecture.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnOXqbWVS2TKpb7tDtjWUY_89imHvLbEHFSg&usqp=CAU",
       "deity": "Surya",
       "normalized_x": 0.68,
@@ -212,95 +212,95 @@
     {
       "name": "Golden Temple (Harmandir Sahib)",
       "location": "Amritsar",
-      "info": "Holistic Sikh shrine with gold-plated sanctum surrounded by the sacred Amrit Sarovar.",
+      "info": "Holistic Sikh shrine with gold-plated sanctum.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5BlZ3US0rXVBfh7D5lqy0tsb3Vjhswi_9PQ&usqp=CAU",
       "deity": "Guru Granth Sahib",
-      "normalized_x": 0.43,
-      "normalized_y": 0.27
+      "normalized_x": 0.40,
+      "normalized_y": 0.25
     }
   ],
   "rajasthan": [
     {
       "name": "Dilwara Temples",
       "location": "Mount Abu",
-      "info": "White marble Jain temples built between 11th–13th century CE, known for exquisite carvings.",
+      "info": "White marble Jain temples built between 11th–13th century CE.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxZF9tsRfY4U3GIdREeNVNs3eWPwp-VRk4yQ&usqp=CAU",
       "deity": "Tirthankaras (Jain)",
-      "normalized_x": 0.33,
-      "normalized_y": 0.44
+      "normalized_x": 0.30,
+      "normalized_y": 0.42
     }
   ],
   "sikkim": [
     {
       "name": "Rumtek Monastery",
       "location": "Gangtok",
-      "info": "Seat of the Karmapa of Tibetan Buddhism; major monastery in Eastern Himalayas.",
+      "info": "Seat of the Karmapa of Tibetan Buddhism.",
       "image_url": "https://share.google/E3JueaT8ozknTHFL1",
       "deity": "Buddha",
-      "normalized_x": 0.82,
-      "normalized_y": 0.37
+      "normalized_x": 0.75,
+      "normalized_y": 0.35
     }
   ],
   "tamil_nadu": [
     {
       "name": "Brihadeeswarar Temple",
       "location": "Thanjavur",
-      "info": "Built by Raja Raja Chola I (11th century CE). Classic Chola architecture; UNESCO World Heritage (Great Living Chola Temples).",
+      "info": "Built by Raja Raja Chola I (11th century CE).",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0tYta00gzWLmGlE7rrbIGXprMTfevk-zFVg&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.52,
-      "normalized_y": 0.78
+      "normalized_x": 0.50,
+      "normalized_y": 0.80
     }
   ],
   "telangana": [
     {
       "name": "Ramappa Temple",
       "location": "Warangal",
-      "info": "UNESCO World Heritage site built by Kakatiya rulers in 13th century CE, famed for floating bricks.",
+      "info": "UNESCO World Heritage site built by Kakatiya rulers.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAjL3EXgGKbcKzex76A4Ylp40OTsbflLPtPg&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.52,
-      "normalized_y": 0.60
+      "normalized_x": 0.50,
+      "normalized_y": 0.65
     }
   ],
   "tripura": [
     {
       "name": "Tripura Sundari Temple",
       "location": "Udaipur",
-      "info": "One of the 51 Shakti Peethas; temple houses a 5,000-year-old idol of Goddess Tripurasundari.",
+      "info": "One of the 51 Shakti Peethas.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQA0dCif9ikmtkENGhcZ36x9v0WnJchTQL5g&usqp=CAU",
       "deity": "Durga",
-      "normalized_x": 0.85,
-      "normalized_y": 0.48
+      "normalized_x": 0.84,
+      "normalized_y": 0.50
     }
   ],
   "uttar_pradesh": [
     {
       "name": "Kashi Vishwanath Temple",
       "location": "Varanasi",
-      "info": "One of the most sacred Jyotirlingas of Shiva, located on the banks of the Ganga.",
+      "info": "One of the most sacred Jyotirlingas of Shiva.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK6mt4Qw0FrMhKJJzkAx8gDDCRhBjDTk4IZA&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.58,
-      "normalized_y": 0.44
+      "normalized_y": 0.45
     }
   ],
   "uttarakhand": [
     {
       "name": "Kedarnath Temple",
       "location": "Rudraprayag",
-      "info": "12th-century stone temple dedicated to Shiva, located in the Himalayas at 3,583 m elevation.",
+      "info": "12th-century stone temple dedicated to Shiva.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjSNZxO2scgzpHwiY5YP_v53JEOijc5N_thA&usqp=CAU",
       "deity": "Shiva",
-      "normalized_x": 0.52,
-      "normalized_y": 0.30
+      "normalized_x": 0.50,
+      "normalized_y": 0.25
     }
   ],
   "west_bengal": [
     {
       "name": "Dakshineswar Kali Temple",
       "location": "Kolkata",
-      "info": "19th-century temple complex built by Rani Rashmoni, dedicated to Goddess Kali.",
+      "info": "19th-century temple complex built by Rani Rashmoni.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5R8T_1sTR1-lGXQrRk6tIZCLFnw7tVqGhGA&usqp=CAU",
       "deity": "Kali",
       "normalized_x": 0.72,
@@ -311,7 +311,7 @@
     {
       "name": "Sri Vetrimalai Murugan Temple",
       "location": "Port Blair",
-      "info": "Primary Hindu temple in the Andaman Islands, dedicated to Murugan.",
+      "info": "Primary Hindu temple in the Andaman Islands.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Z_tO7uOGRcnSLU6uiMMwHPVUGA9Dg1_dbg&usqp=CAU",
       "deity": "Murugan",
       "normalized_x": 0.80,
@@ -322,11 +322,11 @@
     {
       "name": "Mata Mansa Devi Temple",
       "location": "Panchkula",
-      "info": "Ancient Shakti temple near Chandigarh, highly revered during Navratri.",
+      "info": "Ancient Shakti temple near Chandigarh.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzc-NjWd23dg7yCV0eeUG8u-qg2xnEmQ_qOg&usqp=CAU",
       "deity": "Durga",
       "normalized_x": 0.45,
-      "normalized_y": 0.28
+      "normalized_y": 0.38
     }
   ],
   "dadra_and_nagar_haveli_and_daman_and_diu": [
@@ -337,47 +337,47 @@
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQW-ZUgfuYMTWzVBEJq19j-d-S8-qiPFuCsQ&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.30,
-      "normalized_y": 0.55
+      "normalized_y": 0.62
     }
   ],
   "delhi": [
     {
       "name": "Akshardham Temple",
       "location": "New Delhi",
-      "info": "Modern masterpiece of Hindu architecture inaugurated in 2005, dedicated to Swaminarayan.",
+      "info": "Modern masterpiece of Hindu architecture.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWUfKdLLhBj8OfzQt--6bWPg6D83De1ahFXw&usqp=CAU",
       "deity": "Swaminarayan",
-      "normalized_x": 0.46,
-      "normalized_y": 0.35
+      "normalized_x": 0.48,
+      "normalized_y": 0.38
     }
   ],
   "jammu_and_kashmir": [
     {
       "name": "Amarnath Cave Temple",
       "location": "Pahalgam",
-      "info": "Sacred Himalayan cave shrine where the ice Shiva Lingam forms naturally each year.",
+      "info": "Sacred Himalayan cave shrine.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXyGX7CgH7X_GyXvu3QZFkghVjwsLB3YVuZg&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.42,
-      "normalized_y": 0.20
+      "normalized_y": 0.12
     }
   ],
   "ladakh": [
     {
       "name": "Hemis Monastery",
       "location": "Leh",
-      "info": "Largest and wealthiest monastery in Ladakh, associated with Guru Padmasambhava.",
+      "info": "Largest and wealthiest monastery in Ladakh.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8Utr4YEOLXJYXyhbHIXmFmY9B5qx-Ty5w&usqp=CAU",
       "deity": "Buddha",
       "normalized_x": 0.45,
-      "normalized_y": 0.18
+      "normalized_y": 0.15
     }
   ],
   "lakshadweep": [
     {
       "name": "Ujra Mosque",
       "location": "Kavaratti",
-      "info": "17th-century mosque known for intricate wood carvings and peaceful coastal setting.",
+      "info": "17th-century mosque known for intricate wood carvings.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaW3hxsUWPeATpYhIZ_OEOMZluCVzn1J82aQ&usqp=CAU",
       "deity": "Islamic",
       "normalized_x": 0.33,
@@ -388,11 +388,11 @@
     {
       "name": "Manakula Vinayagar Temple",
       "location": "Puducherry",
-      "info": "Historic temple dedicated to Ganesha, predating French colonial era.",
+      "info": "Historic temple dedicated to Ganesha.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-rqfTyj_xnHOUWhjN1pTUb3HhLN-rPnuPUg&usqp=CAU",
       "deity": "Ganesha",
       "normalized_x": 0.54,
-      "normalized_y": 0.76
+      "normalized_y": 0.80
     }
   ]
 }
