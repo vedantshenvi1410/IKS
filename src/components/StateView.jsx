@@ -5,10 +5,8 @@ import "./StateView.css";
 export default function StateView({ stateKey, svgId, temples = [], onBack }) {
   const containerRef = useRef(null);
   const [svgContent, setSvgContent] = useState("");
-  const [loaded, setLoaded] = useState(false);
   const [selectedTemple, setSelectedTemple] = useState(null);
 
-  // load raw svg text
   useEffect(() => {
     let cancelled = false;
     async function load() {
@@ -24,162 +22,220 @@ export default function StateView({ stateKey, svgId, temples = [], onBack }) {
     return () => { cancelled = true; };
   }, []);
 
-  // After svg html is injected, do DOM operations: find viewBox, state bbox, set viewBox to zoomed area
   useEffect(() => {
     if (!svgContent) return;
     const container = containerRef.current;
     if (!container) return;
 
-    // inject svg content
     container.innerHTML = svgContent;
 
-    // small timeout to ensure DOM parsing of innerHTML is done
     requestAnimationFrame(() => {
       const svg = container.querySelector("svg");
-      if (!svg) {
-        console.error("No <svg> found in loaded content.");
-        return;
-      }
+      if (!svg) return;
 
-      // Read original viewBox 
+      // Reset ViewBox Logic
       let origViewBox = { minX: 0, minY: 0, width: 1000, height: 1000 };
       const vb = svg.getAttribute("viewBox");
       if (vb) {
         const parts = vb.split(/\s+|,/).map(Number);
-        if (parts.length === 4 && parts.every(n => !Number.isNaN(n))) {
-          origViewBox = { minX: parts[0], minY: parts[1], width: parts[2], height: parts[3] };
-        }
-      } else {
-        const w = parseFloat(svg.getAttribute("width")) || 1000;
-        const h = parseFloat(svg.getAttribute("height")) || 1000;
-        origViewBox = { minX: 0, minY: 0, width: w, height: h };
-        svg.setAttribute("viewBox", `0 0 ${origViewBox.width} ${origViewBox.height}`);
+        origViewBox = { minX: parts[0], minY: parts[1], width: parts[2], height: parts[3] };
       }
 
-      // Remove any old overlay if it exists (cleanup)
-      let overlay = svg.querySelector("#__temple_overlay");
-      if (overlay) overlay.remove();
-
-      // attempt to find the path for the selected state using the SVG ID
       const statePath = svg.getElementById(svgId);
-      if (!statePath) {
-        console.warn(`No path with id="${svgId}" found in SVG.`);
-      } else {
-        try {
-          const bbox = statePath.getBBox();
-          const padFactor = 0.1;
-          const padX = bbox.width * padFactor;
-          const padY = bbox.height * padFactor;
+      if (statePath) {
+        const bbox = statePath.getBBox();
+        const pad = bbox.width * 0.15; // Tighter zoom for HUD feel
+        
+        svg.setAttribute("viewBox", 
+          `${bbox.x - pad} ${bbox.y - pad} ${bbox.width + pad*2} ${bbox.height + pad*2}`
+        );
 
-          const newMinX = bbox.x - padX;
-          const newMinY = bbox.y - padY;
-          const newW = bbox.width + padX * 2;
-          const newH = bbox.height + padY * 2;
-
-          const origRatio = origViewBox.width / origViewBox.height;
-          let finalW = newW;
-          let finalH = newH;
-          if (newW / newH > origRatio) {
-            finalH = newW / origRatio;
-            const extraH = finalH - newH;
-            svg.setAttribute("viewBox", `${newMinX} ${newMinY - extraH / 2} ${finalW} ${finalH}`);
+        // Styling the focused state
+        const allPaths = svg.querySelectorAll("path");
+        allPaths.forEach(p => {
+          if (p === statePath) {
+            p.style.opacity = "1";
+            p.style.fill = "#111827"; // Dark slate
+            p.style.stroke = "#22D3EE"; // Electric Cyan
+            p.style.strokeWidth = "2px";
+            p.style.filter = "drop-shadow(0 0 10px rgba(34, 211, 238, 0.4))";
           } else {
-            finalW = newH * origRatio;
-            const extraW = finalW - newW;
-            svg.setAttribute("viewBox", `${newMinX - extraW / 2} ${newMinY} ${finalW} ${finalH}`);
+            p.style.opacity = "0.1"; // Fade out others heavily
+            p.style.fill = "#000";
           }
-
-          if (!svg.getAttribute("viewBox")) {
-            svg.setAttribute("viewBox", `${newMinX} ${newMinY} ${finalW} ${finalH}`);
-          }
-
-          svg.classList.add("__state_focused_svg");
-
-          const allPaths = svg.querySelectorAll("path");
-          allPaths.forEach(p => {
-            if (p === statePath) {
-              p.style.opacity = "1";
-              p.style.filter = "drop-shadow(0 4px 6px rgba(0,0,0,0.35))";
-            } else {
-              p.style.opacity = "0.25";
-            }
-          });
-        } catch (err) {
-          console.warn("Could not compute bbox for state path:", err);
-        }
+        });
       }
-
-      setLoaded(true);
     });
   }, [svgContent, svgId]);
 
   return (
     <div className="state-view">
-      <button className="back-btn" onClick={onBack}>← Back to India</button>
-
-      <h2 className="state-title">{stateKey.replaceAll("_", " ").toUpperCase()}</h2>
-
-      <div className="state-svg-wrap" style={{ position: "relative" }}>
-        <div
-          ref={containerRef}
-          className="india-map"
-          style={{ width: "100%", maxWidth: 900, margin: "0 auto" }}
-        />
+      <div className="state-header">
+        <button className="back-btn" onClick={onBack}>
+          <span className="icon">‹</span> SYSTEM_RETURN
+        </button>
+        <h2 className="state-title">{stateKey.replaceAll("_", " ")}</h2>
+        <div className="decor-line"></div>
       </div>
 
-      <div className="temple-list">
-        <h3>Temples in {stateKey.replaceAll("_", " ")}</h3>
-        {temples.length > 0 ? (
+      <div className="content-grid">
+        <div className="state-svg-wrap">
+          <div ref={containerRef} className="india-map" />
+          
+          {/* Overlay Data Node Markers */}
+          {temples.map((t, i) => (
+             <div 
+               key={i}
+               className="map-marker-node"
+               style={{ 
+                 left: `${t.normalized_x * 100}%`, 
+                 top: `${t.normalized_y * 100}%` 
+               }}
+               onClick={() => setSelectedTemple(t)}
+             >
+               <div className="node-ring"></div>
+               <div className="node-core"></div>
+             </div>
+          ))}
+        </div>
+
+        <div className="temple-list-panel">
+          <h3 className="panel-label">DETECTED NODES [{temples.length}]</h3>
           <ul>
             {temples.map((t, i) => (
               <li key={i}>
-                <button onClick={() => setSelectedTemple(t)}>
-                  {t.name} — {t.location}
+                <button className="list-item-btn" onClick={() => setSelectedTemple(t)}>
+                  <span className="code-index">0{i+1}</span>
+                  <span className="name">{t.name}</span>
                 </button>
               </li>
             ))}
           </ul>
-        ) : (
-          <p className="no-temples">No temple data available for this state.</p>
-        )}
+        </div>
       </div>
 
       {selectedTemple && (
-        <div className="popup-overlay" onClick={() => setSelectedTemple(null)}>
-          <div className="popup-content" onClick={e => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setSelectedTemple(null)}>×</button>
-            <h2>{selectedTemple.name}</h2>
-            <p><strong>Location:</strong> {selectedTemple.location}</p>
-            <p><strong>Deity:</strong> {selectedTemple.deity}</p>
-            <p>{selectedTemple.info}</p>
-            {selectedTemple.image_url && <img className="temple-img" src={selectedTemple.image_url} alt={selectedTemple.name} />}
+        <div className="modal-overlay" onClick={() => setSelectedTemple(null)}>
+          <div className="modal-cyber" onClick={e => e.stopPropagation()}>
+            <div className="scanline"></div>
+            <button className="close-btn" onClick={() => setSelectedTemple(null)}>ABORT</button>
+            
+            <div className="modal-grid">
+              {selectedTemple.image_url && (
+                <div className="modal-img-container">
+                  <img src={selectedTemple.image_url} alt={selectedTemple.name} />
+                  <div className="img-overlay"></div>
+                </div>
+              )}
+              <div className="modal-info">
+                <h2 className="glitch-text">{selectedTemple.name}</h2>
+                <div className="meta-row">
+                  <span className="meta-tag">LOC: {selectedTemple.location}</span>
+                  <span className="meta-tag">DEITY: {selectedTemple.deity}</span>
+                </div>
+                <p className="desc">{selectedTemple.info}</p>
+              </div>
+            </div>
           </div>
         </div>
       )}
 
       <style>{`
-        .state-svg-wrap { margin-bottom: 1rem; }
-        .india-map svg { width: 100%; height: auto; display: block; transition: viewBox 300ms ease; }
-        .popup-overlay {
-          position: fixed;
-          inset: 0;
+        /* Dynamic SVG Container */
+        .state-svg-wrap { 
+          position: relative; 
+          width: 100%; 
+          height: 500px;
+          background: radial-gradient(circle at center, #111827 0%, #0B0F14 100%);
+          border: 1px solid #1F2933;
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        .india-map svg { width: 100%; height: 100%; }
+
+        /* Glowing Markers */
+        .map-marker-node {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          transform: translate(-50%, -50%);
+          cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(0,0,0,0.45);
-          z-index: 9999;
+          z-index: 20;
         }
-        .popup-content {
-          background: white;
-          padding: 1rem 1.25rem;
-          border-radius: 10px;
-          max-width: 640px;
-          width: 90%;
-          box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+        .node-core {
+          width: 6px;
+          height: 6px;
+          background: var(--accent);
+          border-radius: 50%;
+          box-shadow: 0 0 10px var(--accent);
+        }
+        .node-ring {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border: 1px solid var(--accent);
+          border-radius: 50%;
+          opacity: 0;
+          animation: pulse-ring 2s infinite;
+        }
+        @keyframes pulse-ring {
+          0% { transform: scale(0.5); opacity: 1; }
+          100% { transform: scale(2); opacity: 0; }
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.85);
+          backdrop-filter: blur(5px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+        }
+        .modal-cyber {
+          background: #0f131a;
+          border: 1px solid #333;
+          border-left: 2px solid var(--accent);
+          width: 800px;
+          max-width: 90%;
+          padding: 30px;
           position: relative;
+          box-shadow: 0 0 40px rgba(0,0,0,0.8);
+          overflow: hidden;
         }
-        .close-btn { position: absolute; right: 8px; top: 8px; background: none; border: none; font-size: 20px; cursor: pointer; }
-        .temple-img { max-width: 100%; height: auto; margin-top: 0.75rem; border-radius: 6px; }
+        .scanline {
+          position: absolute;
+          top: 0; left: 0; right: 0; height: 2px;
+          background: rgba(34, 211, 238, 0.3);
+          animation: scan 3s linear infinite;
+          pointer-events: none;
+        }
+        @keyframes scan { 0% {top:0} 100% {top:100%} }
+
+        .modal-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 24px; }
+        .modal-img-container { position: relative; overflow: hidden; border-radius: 4px; }
+        .modal-img-container img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(80%) contrast(1.2); }
+        .modal-info h2 { font-family: var(--font-head); font-size: 28px; margin: 0 0 16px; color: #fff; text-transform: uppercase; }
+        .meta-row { display: flex; gap: 12px; margin-bottom: 20px; }
+        .meta-tag { background: rgba(34, 211, 238, 0.1); color: var(--secondary); font-family: var(--font-mono); font-size: 11px; padding: 4px 8px; border: 1px solid rgba(34, 211, 238, 0.2); }
+        .desc { line-height: 1.6; color: #aaa; }
+        
+        .close-btn { 
+          position: absolute; top: 16px; right: 16px; 
+          background: transparent; border: 1px solid #333; 
+          color: #666; font-family: var(--font-mono); font-size: 10px;
+          padding: 4px 8px;
+        }
+        .close-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+        @media (max-width: 700px) {
+          .modal-grid { grid-template-columns: 1fr; }
+        }
       `}</style>
     </div>
   );

@@ -22,19 +22,27 @@ export default function IndiaMap({ onStateClick }) {
       const target = e.target;
       if (target.tagName === 'path' && target.id) {
         const name = target.getAttribute('name') || target.id.replace(/_/g, ' ');
-        tooltip.textContent = name.toUpperCase();
+        tooltip.innerHTML = `
+          <span class="label">SECURE_NODE</span>
+          <span class="value">${name.toUpperCase()}</span>
+        `;
         tooltip.style.opacity = '1';
+        
+        // Add HUD crosshair effect class
+        target.classList.add('hud-active');
       }
     };
 
     const handleMouseMove = (e) => {
-      tooltip.style.left = e.pageX + 12 + 'px';
-      tooltip.style.top = e.pageY - 24 + 'px';
+      // Offset slightly for HUD feel
+      tooltip.style.left = e.pageX + 20 + 'px';
+      tooltip.style.top = e.pageY - 20 + 'px';
     };
 
     const handleMouseOut = (e) => {
       if (e.target.tagName === 'path') {
         tooltip.style.opacity = '0';
+        e.target.classList.remove('hud-active');
       }
     };
 
@@ -56,78 +64,106 @@ export default function IndiaMap({ onStateClick }) {
 
   return (
     <div className="map-wrapper">
+      <div className="grid-overlay"></div>
       <div
         ref={svgContainerRef}
         className="india-map-container"
         onClick={handleClick}
         dangerouslySetInnerHTML={{ __html: svgContent }}
       />
-
-      <div ref={tooltipRef} className="state-tooltip" />
+      <div ref={tooltipRef} className="hud-tooltip" />
 
       <style>{`
         .map-wrapper {
-          perspective: 1200px;
-          text-align: center;
-          padding: 2rem;
-          background: radial-gradient(circle at top left, #fffbe6, #ffe0b2);
-          border-radius: 18px;
-          box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-          max-width: 900px;
-          margin: 2rem auto;
-          transform-style: preserve-3d;
-          overflow: visible;
           position: relative;
+          width: min(1000px, 95vw);
+          aspect-ratio: 1/1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        .india-map-container {
-          display: inline-block;
-          transform: rotateX(8deg) rotateY(-5deg) translateZ(90px) scale(0.95);
-          transform-origin: center center;
-          transition: transform 0.6s ease, filter 0.4s ease;
-          overflow: visible;
-        }
-
-        .india-map-container:hover {
-          transform: rotateX(0deg) rotateY(0deg) scale(1.06);
-          filter: brightness(1.08);
+        /* Sci-Fi Grid Background */
+        .grid-overlay {
+          position: absolute;
+          inset: 0;
+          background-image: 
+            linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+          background-size: 40px 40px;
+          border-radius: 50%;
+          mask-image: radial-gradient(circle, black 40%, transparent 70%);
+          pointer-events: none;
+          z-index: 0;
         }
 
         .india-map-container svg {
           width: 100%;
           height: auto;
-          cursor: pointer;
+          filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.1));
+          z-index: 1;
           overflow: visible;
         }
 
         .india-map-container path {
-          fill: #ff7a00;
-          stroke: #3b2b19;
-          stroke-width: 0.7;
-          filter: drop-shadow(0 2px 2px rgba(0,0,0,0.4))
-                  drop-shadow(0 6px 10px rgba(0,0,0,0.25));
-          transition: all 0.25s ease;
+          fill: #1F2933;         /* Dark Tech Base */
+          stroke: #374151;       /* Subtle Stroke */
+          stroke-width: 0.5;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          cursor: crosshair;     /* Tech cursor */
+          vector-effect: non-scaling-stroke;
         }
 
-        .india-map-container path:hover {
-          fill: #ffa447;
-          transform: translateZ(8px);
-          filter: drop-shadow(0 10px 8px rgba(0,0,0,0.35)) brightness(1.1);
+        .india-map-container path:hover, 
+        .india-map-container path.hud-active {
+          fill: #111827;
+          stroke: #FF9F1C;       /* Neon Saffron Stroke */
+          stroke-width: 1.5;
+          filter: drop-shadow(0 0 8px rgba(255, 159, 28, 0.6));
+          z-index: 10;
         }
 
-        .state-tooltip {
+        /* HUD Tooltip Styling */
+        .hud-tooltip {
           position: absolute;
           pointer-events: none;
-          background: rgba(0,0,0,0.75);
-          color: #fff;
-          padding: 6px 10px;
-          border-radius: 6px;
-          font-size: 0.9rem;
-          font-weight: 500;
-          opacity: 0;
-          transition: opacity 0.15s ease;
-          transform: translate(-50%, -50%);
+          background: rgba(11, 15, 20, 0.9);
+          border: 1px solid var(--secondary);
+          box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+          padding: 8px 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
           z-index: 9999;
+          backdrop-filter: blur(4px);
+          transition: opacity 0.1s;
+        }
+
+        .hud-tooltip .label {
+          font-family: var(--font-mono);
+          font-size: 9px;
+          color: var(--secondary);
+          opacity: 0.8;
+        }
+
+        .hud-tooltip .value {
+          font-family: var(--font-head);
+          font-size: 14px;
+          color: #fff;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+        }
+
+        /* Corner accents for the tooltip */
+        .hud-tooltip::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          right: -2px;
+          width: 6px;
+          height: 6px;
+          background: var(--secondary);
+          box-shadow: 0 0 5px var(--secondary);
         }
       `}</style>
     </div>

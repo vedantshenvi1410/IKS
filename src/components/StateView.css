@@ -1,115 +1,114 @@
 .state-view {
-  padding: 1rem;
-  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.state-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #1F2933;
+  padding-bottom: 16px;
 }
 
 .state-title {
-  margin: 0.5rem 0 1rem;
-  color: #5a3e1e;
-  font-size: 1.4rem;
-  font-weight: 700;
-  text-transform: capitalize;
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 32px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .back-btn {
-  background: none;
-  border: 1px solid #cfa06a;
-  padding: 0.4rem 1rem;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.2s;
+  background: transparent;
+  border: 1px solid #374151;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 2px;
+  transition: all 0.2s;
 }
 
 .back-btn:hover {
-  background: #f6e7d4;
+  border-color: var(--secondary);
+  color: var(--secondary);
+  background: rgba(34, 211, 238, 0.05);
 }
 
-.state-svg-wrap {
-  width: 100%;
-  max-width: 700px;
-  margin: 1rem auto;
-  background: #fffaf3;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
-  overflow: hidden;
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
 }
 
-.state-svg {
-  width: 100%;
-  height: auto;
+.temple-list-panel {
+  background: #111827;
+  border: 1px solid #1F2933;
+  padding: 20px;
+  height: 500px;
+  overflow-y: auto;
 }
 
-.state-shape path,
-.state-shape g path {
-  fill: #f7eee2;
-  stroke: #cfa06a;
-  stroke-width: 3;
+.panel-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #4B5563;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
 }
 
-.marker circle {
-  fill: #d63384;
-  stroke: #fff;
-  stroke-width: 2;
-  cursor: pointer;
-  transition: transform 0.2s ease, fill 0.2s;
-}
-
-.marker:hover circle {
-  transform: scale(1.3);
-  fill: #b62b72;
-}
-
-.marker-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  fill: #222;
-  pointer-events: none;
-}
-
-/* Temple list */
-.temple-list {
-  margin-top: 1.5rem;
-  text-align: left;
-  max-width: 600px;
-  margin-inline: auto;
-}
-
-
-.temple-img {
-  max-width: 300px; /* adjust as needed */
-  max-height: 200px; /* adjust as needed */
-  width: auto;
-  height: auto;
-  display: block;
-  margin-top: 10px;
-  border-radius: 6px; /* optional */
-  object-fit: cover; /* ensures the image scales nicely */
-}
-
-.temple-list ul {
+.temple-list-panel ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.temple-list li {
-  margin-bottom: 0.4rem;
-}
-
-.temple-list button {
-  background: none;
+.list-item-btn {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: transparent;
   border: none;
-  cursor: pointer;
-  color: #00695c;
-  font-size: 1rem;
-  transition: 0.2s;
+  border-bottom: 1px solid #1F2933;
+  padding: 12px 8px;
+  text-align: left;
+  transition: all 0.2s;
 }
 
-.temple-list button:hover {
-  color: #004d40;
-  text-decoration: underline;
+.list-item-btn:hover {
+  background: rgba(255, 159, 28, 0.05);
+  padding-left: 12px; /* Slight slide effect */
 }
 
-.no-temples {
-  color: #666;
-  font-style: italic;
+.code-index {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--secondary);
+  opacity: 0.7;
+}
+
+.name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.list-item-btn:hover .name {
+  color: var(--accent);
+}
+
+@media (max-width: 800px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .state-svg-wrap {
+    height: 350px !important;
+  }
 }
