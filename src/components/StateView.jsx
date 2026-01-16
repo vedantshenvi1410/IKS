@@ -81,22 +81,6 @@ export default function StateView({ stateKey, svgId, temples = [], onBack }) {
       <div className="content-grid">
         <div className="state-svg-wrap">
           <div ref={containerRef} className="india-map" />
-          
-          {/* Overlay Data Node Markers */}
-          {temples.map((t, i) => (
-             <div 
-               key={i}
-               className="map-marker-node"
-               style={{ 
-                 left: `${t.normalized_x * 100}%`, 
-                 top: `${t.normalized_y * 100}%` 
-               }}
-               onClick={() => setSelectedTemple(t)}
-             >
-               <div className="node-ring"></div>
-               <div className="node-core"></div>
-             </div>
-          ))}
         </div>
 
         <div className="temple-list-panel">
@@ -152,39 +136,6 @@ export default function StateView({ stateKey, svgId, temples = [], onBack }) {
           overflow: hidden;
         }
         .india-map svg { width: 100%; height: 100%; }
-
-        /* Glowing Markers */
-        .map-marker-node {
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          transform: translate(-50%, -50%);
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 20;
-        }
-        .node-core {
-          width: 6px;
-          height: 6px;
-          background: var(--accent);
-          border-radius: 50%;
-          box-shadow: 0 0 10px var(--accent);
-        }
-        .node-ring {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          border: 1px solid var(--accent);
-          border-radius: 50%;
-          opacity: 0;
-          animation: pulse-ring 2s infinite;
-        }
-        @keyframes pulse-ring {
-          0% { transform: scale(0.5); opacity: 1; }
-          100% { transform: scale(2); opacity: 0; }
-        }
 
         /* Modal Styles */
         .modal-overlay {
