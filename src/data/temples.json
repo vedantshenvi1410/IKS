@@ -3,7 +3,7 @@
     {
       "name": "Venkateswara Temple",
       "location": "Tirupati",
-      "info": "Located on the Seshachalam Hills, dedicated to Lord Venkateswara.",
+      "info": "Revered as the 'Kaliyuga Vaikuntha', this temple stands atop the Seshachalam Hills as a masterpiece of Dravidian architecture. Its history spans centuries, with inscriptions dating back to the Pallava queens of the 9th century, followed by massive royal patronage from the Chola, Pandya, and Vijayanagara empires—particularly Sri Krishnadevaraya, who donated diamond-studded crowns. Legend has it that Lord Srinivasa (Vishnu) resides here to repay a celestial loan to Kubera, borrowed for his marriage to Padmavathi, making it the world's wealthiest religious institution by donations.",
       "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEituw1wwqvcJ8Z2ipzHPkN9hZHQt02zPyckkPNeJI1DsDQ8bwxQ4YhdcRYXsOG1b6QUiowRdVT94IDHs4F6cKPSYnvC6AuNXGHRHIJGRKIU3Oz16AFrblnDWHbpkhDIJ_8pCBJAl_k7i5s/s1600/2017-03-23.jpg",
       "deity": "Venkateswara (Vishnu)",
       "normalized_x": 0.52,
@@ -14,7 +14,7 @@
     {
       "name": "Malinithan Temple Ruins",
       "location": "West Siang",
-      "info": "Early-medieval ruins at the foot of the Siang hills.",
+      "info": "Nestled at the foot of the Siang hills, these 13th-century granite ruins are a testament to the Aryan influence in the northeast, attributed to the Chutiya Kingdom. The site is steeped in mythology; it is believed that Lord Krishna and Rukmini stopped here while traveling from Bhismaknagar to Dwarka. They were welcomed by Goddess Parvati with garlands made from her own garden. Krishna, charmed by the fragrance, addressed her as 'Malini' (Mistress of the Garden), bestowing the name Malinithan upon this sacred archaeological site.",
       "image_url": "https://arunachal24.in/wp-content/uploads/2020/11/Malinithan-temple-4.jpg.webp",
       "deity": "Krishna & Rukmini",
       "normalized_x": 0.88,
@@ -25,7 +25,7 @@
     {
       "name": "Kamakhya Temple",
       "location": "Guwahati",
-      "info": "One of the oldest and most significant Shakti Peethas.",
+      "info": "Perched on Nilachal Hill, this is one of the oldest and most potent of the 51 Shakti Peethas, representing the 'yoni' (womb) of Sati. The current structure, with its distinctive beehive-like shikhara, was rebuilt by the Koch King Naranarayan in 1565 after earlier destruction. It is the center of Tantric worship in India and is world-renowned for the Ambubachi Mela, a unique festival celebrating the annual menstruation of the Goddess, during which the nearby Brahmaputra river is symbolically believed to turn red.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-lX0YqRf2xg4cCfNNJilmxxjnxwNzRdczKw&usqp=CAU",
       "deity": "Kamakhya (Parvati)",
       "normalized_x": 0.82,
@@ -36,7 +36,7 @@
     {
       "name": "Mahabodhi Temple",
       "location": "Bodh Gaya",
-      "info": "A UNESCO World Heritage Site marking where Buddha attained enlightenment.",
+      "info": "A profound spiritual landmark and UNESCO World Heritage Site, this temple marks the exact location where Siddhartha Gautama attained enlightenment to become the Buddha. While the original shrine was commissioned by Emperor Ashoka in the 3rd century BCE, the current 50-meter high pyramidal tower is a classic example of Gupta-era brick architecture from the 5th–6th century CE. The complex houses the sacred Bodhi Tree, a direct descendant of the original tree under which the Buddha sat.",
       "image_url": "https://sabrangindia.in/wp-content/uploads/2025/03/Mahabodhi_Temple_Complex_511d2e9a47.webp",
       "deity": "Buddha",
       "normalized_x": 0.62,
@@ -47,7 +47,7 @@
     {
       "name": "Bhoramdeo Temple",
       "location": "Kawardha",
-      "info": "Known as the 'Khajuraho of Chhattisgarh'.",
+      "info": "Often called the 'Khajuraho of Chhattisgarh', this architectural gem was built around 1089 CE by King Gopal Dev of the Phani Nagvansh dynasty. Dedicated to Lord Shiva (worshipped here as Bhoramdeo by the local Gond tribals), the temple is situated in the scenic Maikal hills. It is renowned for its exquisite Nagara-style architecture and the intricate erotic sculptures on its exterior walls, which symbolize the Tantric philosophy that human desire is a stepping stone to spiritual liberation.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb-KCtNdO0_Semwre1TMFYh5uQCGR9PcokEA&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.56,
@@ -58,7 +58,7 @@
     {
       "name": "Tambdi Surla Mahadev Temple",
       "location": "Sanguem",
-      "info": "A 12th-century Kadamba-style Shiva temple built from basalt.",
+      "info": "Hidden deep within the Bhagwan Mahaveer Sanctuary, this 12th-century Shaivite temple is the sole surviving structural testament to the Kadamba Dynasty in Goa. Built from weather-resistant black basalt, which is not native to the region and had to be transported from the Deccan plateau, the temple features intricate carvings of Shiva, Vishnu, and Brahma. Its remote location helped it survive the destruction of Hindu shrines during the Goa Inquisition and earlier Muslim invasions.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzdj_Q2Nikbvas2vfatXSa40jFybSAeWu6rw&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.38,
@@ -69,7 +69,7 @@
     {
       "name": "Somnath Temple",
       "location": "Prabhas Patan",
-      "info": "Venerated as the first of the 12 Jyotirlingas.",
+      "info": "Standing on the shores of the Arabian Sea, Somnath is the first of the 12 Jyotirlingas and a symbol of resilience. Known as the 'Shrine Eternal', it was destroyed and looted seventeen times by invaders, most famously by Mahmud of Ghazni in 1026, yet was rebuilt every time. The modern structure, constructed in 1951 under the leadership of Sardar Vallabhbhai Patel, showcases the Chalukya (Kailash Mahameru Prasad) style and features the 'Arrow Pillar', which points directly to the South Pole with no landmass in between.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy881HE9RZvM3ELyHqRJA3CrmHGfhzeYZhyQ&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.25,
@@ -80,7 +80,7 @@
     {
       "name": "Kurukshetra Brahma Sarovar",
       "location": "Kurukshetra",
-      "info": "A vast man-made sacred tank associated with Lord Brahma.",
+      "info": "This colossal water tank is believed to be the cradle of civilization, where Lord Brahma conceived the universe. It is deeply embedded in history, mentioned in the 11th-century memoirs of Al-Biruni and the Mahabharata. During a solar eclipse, taking a dip here is considered as meritorious as performing a thousand Ashwamedha Yagnas. The Sarovar is particularly vibrant during the International Gita Mahotsav, where hundreds of thousands of oil lamps are floated in the water.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ2hl1CxaGgYO5uh9iKix9-TOX7LQstw4cYA&usqp=CAU",
       "deity": "Vishnu/Brahma",
       "normalized_x": 0.44,
@@ -91,7 +91,7 @@
     {
       "name": "Baijnath Temple",
       "location": "Kangra",
-      "info": "A 13th-century Nagara-style Shiva temple housing a Swayambhu Lingam.",
+      "info": "A masterpiece of early medieval North Indian architecture, this 13th-century temple was built by two merchant brothers, Ahuka and Manyuka. It is dedicated to Shiva as 'Vaidyanath' (The Lord of Physicians). The temple is tied to the legend of the demon king Ravana, who worshipped Shiva here to gain immortality. Because Ravana is respected as a great devotee here, the town of Baijnath notably does not celebrate Dussehra or burn effigies of Ravana, unlike the rest of India.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs73Dj1pDKVmiHBIAcm-u1piiw6xME_gtclg&usqp=CAU",
       "deity": "Shiva (Vaidyanath)",
       "normalized_x": 0.45,
@@ -102,7 +102,7 @@
     {
       "name": "Baidhyanath Dham",
       "location": "Deoghar",
-      "info": "A revered pilgrimage site that is both a Jyotirlinga and a Shakti Peetha.",
+      "info": "One of the few sites in India that is both a Jyotirlinga and a Shakti Peetha, making it exceptionally sacred. Legend says that Ravana, in his quest to take Shiva to Lanka, was forced to place the lingam here, rooting it to the spot forever. To apologize, he cut off his ten heads as an offering; Shiva, pleased, acted as a Vaidya (doctor) to heal him, giving the temple the name Baidyanath. It is famous for the Shravani Mela, where millions of devotees (Kanwariyas) carry holy water from the Ganges to offer here.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqGWKsWx4xCUzXpqZIgrcmZc2bUXNKxo47pg&usqp=CAU",
       "deity": "Shiva (Baidyanath)",
       "normalized_x": 0.64,
@@ -113,7 +113,7 @@
     {
       "name": "Hampi Virupaksha",
       "location": "Hampi",
-      "info": "The oldest active temple in the UNESCO-listed Hampi ruins.",
+      "info": "Located on the banks of the Tungabhadra River, this is the oldest functioning temple in the UNESCO-listed ruins of Hampi, predating the Vijayanagara Empire. Originally a small shrine from the 7th century, it was expanded into a grand complex by rulers like Krishnadevaraya. The temple is dedicated to Virupaksha (Shiva) and his consort Pampa Devi. A marvel of engineering, the temple is famous for an inverted shadow of the main tower that falls inside the temple premises through a small aperture, acting as a pinhole camera.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz2ZFPGapnxrIwZ7H9Z4ZzIs-Cdcv1ugVa0Q&usqp=CAU",
       "deity": "Shiva (Virupaksha)",
       "normalized_x": 0.42,
@@ -124,7 +124,7 @@
     {
       "name": "Sabarimala Temple",
       "location": "Pathanamthitta",
-      "info": "A major pilgrimage site in the Western Ghats dedicated to Lord Ayyappa.",
+      "info": "Situated amidst the dense forests of the Periyar Tiger Reserve, this hill temple is dedicated to Lord Ayyappa, a syncretic deity born of Shiva and Vishnu (as Mohini). It is the site of one of the largest annual pilgrimages in the world, attracting millions of devotees who observe a strict 41-day vow of celibacy and austerity. The temple is famous for the 'Pathinettam Padi' (18 sacred gold-plated steps) which can only be ascended by those carrying the 'Irumudi' (sacred offering bundle) on their heads.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ55scXw1egykZgM4o-93IxvfYlhiMkoPPt1A&usqp=CAU",
       "deity": "Ayyappa",
       "normalized_x": 0.43,
@@ -135,7 +135,7 @@
     {
       "name": "Khajuraho Temples",
       "location": "Chhatarpur",
-      "info": "UNESCO World Heritage Site famous for its Nagara-style architecture.",
+      "info": "Built by the Chandela Dynasty between 950 and 1050 CE, this UNESCO World Heritage Site is a stunning example of Nagara-style architecture. While famous globally for their erotic sculptures, these carvings actually constitute less than 10% of the art; the majority depict daily life, war, meditation, and spiritual teachings. The temples were lost to the jungle for centuries until their rediscovery by the British in the 19th century, preserving their intricate stonework from vandalism.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8yMJ802PLY0wrnKl6t3C3Cnx2Jd0IzPUCw&usqp=CAU",
       "deity": "Various (Hindu & Jain)",
       "normalized_x": 0.53,
@@ -146,7 +146,7 @@
     {
       "name": "Ellora Caves (Kailasa)",
       "location": "Ellora",
-      "info": "Home to the magnificent Kailasa Temple (Cave 16).",
+      "info": "Cave 16 of Ellora, the Kailasa Temple, is an engineering miracle and the largest monolithic rock-cut structure in the world. Commissioned by Rashtrakuta King Krishna I in the 8th century, it was not built up, but carved *down* vertically from a single basalt cliff face, requiring the removal of 200,000 tonnes of rock. Designed to replicate Mount Kailash, Shiva's Himalayan abode, it features sophisticated drainage systems, multi-story galleries, and life-size elephant sculptures holding up the main structure.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf18VJ6BPPULhhPcs7ATAhvp9mq6_NJxeRWg&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.40,
@@ -157,7 +157,7 @@
     {
       "name": "Shree Govindajee Temple",
       "location": "Imphal",
-      "info": "The largest Vaishnava temple in Manipur, dedicated to Govindaji (Krishna).",
+      "info": "This historic Vaishnavite temple is the spiritual center of Manipur, originally built in 1846 by Maharaja Nara Singh and later reconstructed in 1876 after an earthquake. The architecture is a unique blend of Hindu, Islamic, and indigenous styles, featuring a gold-plated double dome and a large congregation hall (Mandapa). It plays a central role in Manipuri culture as the primary venue for the classical Ras Lila and Manipuri dance performances dedicated to Lord Krishna.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbazszvMxniEyr7CV4nreo7S0JAsEJC4ddw&usqp=CAU",
       "deity": "Krishna (Govindaji)",
       "normalized_x": 0.88,
@@ -168,7 +168,7 @@
     {
       "name": "Nartiang Durga Temple",
       "location": "Jaintia Hills",
-      "info": "A 500-year-old Shakti Peetha in the Jaintia Hills.",
+      "info": "Located in the Jaintia Hills, this 600-year-old temple is a Shakti Peetha where Sati's left thigh is believed to have fallen. It was once the center of the Jaintia Kingdom's royal rituals, which historically included human sacrifice (Thelis) before the practice was abolished by the British. Today, the rites are a unique blend of Hindu and local Khasi traditions, where the Goddess is worshipped as 'Jainteshwari' and the tribal priests follow a matrilineal lineage system.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAu92Mmi6XSc5C7JUDwt1JU4NbK0hAKAKrpw&usqp=CAU",
       "deity": "Durga (Jainteshwari)",
       "normalized_x": 0.82,
@@ -179,7 +179,7 @@
     {
       "name": "Solomon's Temple",
       "location": "Aizawl",
-      "info": "A grand modern church complex in Aizawl.",
+      "info": "This grand, non-denominational church is a modern architectural marvel in Aizawl, constructed by the religious group Kohhran Thianghlim. The foundation was laid in 1996 based on a divine vision received by Dr. L.B. Sailo, and it took two decades to complete. The structure, capable of seating 3,000 people, is built with imported white marble and features four towers topped with crowns, symbolizing the four cardinal directions and the welcoming of people from all corners of the earth.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh10ddDEbG6vwJPP4lat9NJhGKtt2qsL-xBw&usqp=CAU",
       "deity": "Christian (Universal)",
       "normalized_x": 0.86,
@@ -190,7 +190,7 @@
     {
       "name": "Dimapur Kachari Ruins",
       "location": "Dimapur",
-      "info": "Medieval ruins of the Kachari Kingdom's capital.",
+      "info": "These enigmatic ruins date back to the 10th-13th century Kachari civilization, a dynasty that ruled before the Ahom invasion. The site is famous for its rows of massive, mushroom-shaped sandstone pillars (monoliths), which have no parallel in Indian architecture. While their exact purpose remains a mystery, historians believe they were associated with fertility cults or served as totems for ritual games similar to chess, played by the royal family.",
       "image_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/62/13/76/pillars-at-kachari-ruins.jpg?w=800&h=-1&s=1",
       "deity": "Ancestral/Historical",
       "normalized_x": 0.89,
@@ -201,7 +201,7 @@
     {
       "name": "Konark Sun Temple",
       "location": "Konark",
-      "info": "13th-century CE Sun temple, famous for its chariot-shaped architecture.",
+      "info": "Known as the 'Black Pagoda' by European sailors, this 13th-century UNESCO World Heritage Site is a colossal representation of the Sun God Surya's chariot. Built by King Narasimhadeva I of the Eastern Ganga Dynasty, it was designed with 12 pairs of elaborately carved wheels that function as accurate sun dials. Though the main central tower collapsed centuries ago (possibly due to its heavy magnet or weak soil), the remaining Jagamohana (assembly hall) stands as a testament to the Kalinga school of architecture.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnOXqbWVS2TKpb7tDtjWUY_89imHvLbEHFSg&usqp=CAU",
       "deity": "Surya",
       "normalized_x": 0.68,
@@ -212,7 +212,7 @@
     {
       "name": "Golden Temple (Harmandir Sahib)",
       "location": "Amritsar",
-      "info": "Holistic Sikh shrine with gold-plated sanctum.",
+      "info": "The spiritual heart of Sikhism, Harmandir Sahib was founded in 1577 by Guru Ram Das, with its foundation stone laid by the Sufi saint Mian Mir to symbolize interfaith harmony. The temple floats in the Amrit Sarovar (Pool of Nectar) and was covered in gold leaf by Maharaja Ranjit Singh in the 19th century. It embodies the Sikh principle of equality; its four entrances welcome people from all directions and castes, and its Langar (community kitchen) feeds over 100,000 people daily for free.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5BlZ3US0rXVBfh7D5lqy0tsb3Vjhswi_9PQ&usqp=CAU",
       "deity": "Guru Granth Sahib",
       "normalized_x": 0.40,
@@ -223,7 +223,7 @@
     {
       "name": "Dilwara Temples",
       "location": "Mount Abu",
-      "info": "White marble Jain temples built between 11th–13th century CE.",
+      "info": "These Jain temples, built between the 11th and 13th centuries by the Chalukya dynasty ministers Vimal Shah and Vastupal-Tejpal, are considered the finest examples of marble stone carving in the world. The artisans scraped the marble rather than chiseling it, resulting in ceilings and pillars so delicate they appear transparent, like lace. The Vimal Vasahi temple specifically is dedicated to the first Tirthankara, Rishabhanatha, and is a quiet sanctuary of peace amidst the Aravalli hills.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxZF9tsRfY4U3GIdREeNVNs3eWPwp-VRk4yQ&usqp=CAU",
       "deity": "Tirthankaras (Jain)",
       "normalized_x": 0.30,
@@ -234,7 +234,7 @@
     {
       "name": "Rumtek Monastery",
       "location": "Gangtok",
-      "info": "Seat of the Karmapa of Tibetan Buddhism.",
+      "info": "Also known as the Dharma Chakra Centre, Rumtek is the largest monastery in Sikkim and the exile seat of the Karmapa Lama, the head of the Black Hat sect of Tibetan Buddhism. Though originally built in the 1700s, it was reconstructed in the 1960s by the 16th Karmapa after fleeing Tibet, modeled directly on the Tsurphu Monastery in Lhasa. It houses some of the world's most unique religious scriptures and serves as a vital center for Kagyu teachings.",
       "image_url": "https://share.google/E3JueaT8ozknTHFL1",
       "deity": "Buddha",
       "normalized_x": 0.75,
@@ -245,7 +245,7 @@
     {
       "name": "Brihadeeswarar Temple",
       "location": "Thanjavur",
-      "info": "Built by Raja Raja Chola I (11th century CE).",
+      "info": "Popularly known as the 'Big Temple', this UNESCO World Heritage Site was completed in 1010 CE by the great Chola emperor Raja Raja Chola I. It is an architectural marvel; the entire structure is built of granite in a region where no granite is found, and the 80-ton capstone (Kumbam) atop the tower was ramped up using elephants from 6 km away. The temple's 216-foot vimana is one of the tallest in the world, and it is famous for the myth that its shadow never falls on the ground at noon.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0tYta00gzWLmGlE7rrbIGXprMTfevk-zFVg&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.50,
@@ -256,7 +256,7 @@
     {
       "name": "Ramappa Temple",
       "location": "Warangal",
-      "info": "UNESCO World Heritage site built by Kakatiya rulers.",
+      "info": "A UNESCO World Heritage Site built in 1213 CE under the Kakatiya dynasty, this temple is unique as it is named after its chief sculptor, Ramappa, rather than the king or the deity. It is famous for its 'floating bricks', which are made of porous clay that is lighter than water, reducing the weight on the foundation. The temple stands on a 6-foot high star-shaped platform and features intricate carvings of dancers that are said to have inspired the poses in the classical dance form Kuchipudi.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAjL3EXgGKbcKzex76A4Ylp40OTsbflLPtPg&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.50,
@@ -267,7 +267,7 @@
     {
       "name": "Tripura Sundari Temple",
       "location": "Udaipur",
-      "info": "One of the 51 Shakti Peethas.",
+      "info": "Locally known as Matabari, this 500-year-old temple is one of the 51 Shakti Peethas, where the right foot of Sati is believed to have fallen. Built by Maharaja Dhanya Manikya in 1501, the temple's structure resembles the hump of a tortoise (Kurma Pitha), a shape considered highly sacred in Tantric texts. The temple overlooks the Kalyan Sagar lake, which is famous for its resident tortoises that are fed by devotees and revered as companions of the Goddess.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQA0dCif9ikmtkENGhcZ36x9v0WnJchTQL5g&usqp=CAU",
       "deity": "Durga",
       "normalized_x": 0.84,
@@ -278,7 +278,7 @@
     {
       "name": "Kashi Vishwanath Temple",
       "location": "Varanasi",
-      "info": "One of the most sacred Jyotirlingas of Shiva.",
+      "info": "Located on the western bank of the holy Ganges in the world's oldest living city, this temple is the center of the Hindu faith. It houses one of the 12 Jyotirlingas and has seen cycles of destruction and rebirth, most notably being razed by Aurangzeb and rebuilt in 1780 by the Maratha Queen Ahilyabai Holkar. The temple's iconic twin domes were plated with 1000 kg of pure gold donated by Maharaja Ranjit Singh. It is believed that those who die in Kashi achieve 'Moksha' (liberation), with Shiva himself whispering the Tarak Mantra into their ears.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK6mt4Qw0FrMhKJJzkAx8gDDCRhBjDTk4IZA&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.58,
@@ -289,7 +289,7 @@
     {
       "name": "Kedarnath Temple",
       "location": "Rudraprayag",
-      "info": "12th-century stone temple dedicated to Shiva.",
+      "info": "Situated at an altitude of 3,583 meters near the Chorabari Glacier, Kedarnath is one of the Char Dham sites and the most remote of the 12 Jyotirlingas. Mythology states the Pandavas built the original temple to seek Shiva's forgiveness after the Kurukshetra war, but Shiva hid from them in the form of a bull, diving into the ground and leaving only his hump (the conical lingam). The current structure was revived by Adi Shankaracharya in the 8th century and miraculously survived the devastating 2013 flash floods, protected by a massive boulder that diverted the waters.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjSNZxO2scgzpHwiY5YP_v53JEOijc5N_thA&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.50,
@@ -300,7 +300,7 @@
     {
       "name": "Dakshineswar Kali Temple",
       "location": "Kolkata",
-      "info": "19th-century temple complex built by Rani Rashmoni.",
+      "info": "This iconic Navaratna (nine-spired) temple was built in 1855 by the philanthropist Rani Rashmoni, a sudra woman who defied caste norms to construct it after a dream vision of Goddess Kali. Located on the banks of the Hooghly River, it is spiritually synonymous with the mystic Sri Ramakrishna Paramahansa, who served as its head priest. It was here that he reportedly had visions of the Divine Mother and preached the unity of all religions.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5R8T_1sTR1-lGXQrRk6tIZCLFnw7tVqGhGA&usqp=CAU",
       "deity": "Kali",
       "normalized_x": 0.72,
@@ -311,7 +311,7 @@
     {
       "name": "Sri Vetrimalai Murugan Temple",
       "location": "Port Blair",
-      "info": "Primary Hindu temple in the Andaman Islands.",
+      "info": "This temple stands as a symbol of Tamil heritage in the islands, originally constructed in 1926 on Ross Island by the British administration to win the loyalty of Tamil laborers. As the administrative headquarters moved, the temple was relocated to Port Blair. It is a striking example of Dravidian architecture with a colorful gopuram, serving as the focal point for the grand celebration of Thaipusam, where devotees pierce their bodies with hooks as an act of penance.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Z_tO7uOGRcnSLU6uiMMwHPVUGA9Dg1_dbg&usqp=CAU",
       "deity": "Murugan",
       "normalized_x": 0.80,
@@ -322,7 +322,7 @@
     {
       "name": "Mata Mansa Devi Temple",
       "location": "Panchkula",
-      "info": "Ancient Shakti temple near Chandigarh.",
+      "info": "Located in the foothills of the Shivalik range, this temple is a major Shakti shrine dedicated to Mansa Devi, the goddess who grants wishes. The main temple was built by Maharaja Gopal Singh of Manimajra between 1811 and 1815. The complex features beautiful wall paintings (frescoes) showcasing themes from the Puranas, which are currently being preserved as heritage art. It attracts throngs of devotees during the Navratri fairs.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzc-NjWd23dg7yCV0eeUG8u-qg2xnEmQ_qOg&usqp=CAU",
       "deity": "Durga",
       "normalized_x": 0.45,
@@ -333,7 +333,7 @@
     {
       "name": "Somnath Mahadev Temple (Diu)",
       "location": "Diu",
-      "info": "Seaside Shiva temple with Portuguese-era architecture influence.",
+      "info": "Located near the Diu Fort, this temple is a unique blend of spirituality and colonial history. While dedicated to Lord Shiva, the architecture is heavily influenced by the Portuguese style, featuring stone lattices and arched doorways usually seen in churches. The temple is situated merely 50 feet from the Arabian Sea, and the sound of crashing waves provides a constant natural background chant to the prayers offered here.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQW-ZUgfuYMTWzVBEJq19j-d-S8-qiPFuCsQ&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.30,
@@ -344,7 +344,7 @@
     {
       "name": "Akshardham Temple",
       "location": "New Delhi",
-      "info": "Modern masterpiece of Hindu architecture.",
+      "info": "Officially known as the Swaminarayan Akshardham, this colossal complex was inaugurated in 2005 and holds the Guinness World Record for the World's Largest Comprehensive Hindu Temple. Built by the BAPS Sanstha using pink Rajasthani sandstone and Italian Carrara marble, it was constructed without the use of ferrous metal (steel or iron) to ensure longevity. The complex features a boat ride depicting 10,000 years of Indian history, a musical fountain, and the 'Yagnapurush Kund', India's largest stepwell.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWUfKdLLhBj8OfzQt--6bWPg6D83De1ahFXw&usqp=CAU",
       "deity": "Swaminarayan",
       "normalized_x": 0.48,
@@ -355,7 +355,7 @@
     {
       "name": "Amarnath Cave Temple",
       "location": "Pahalgam",
-      "info": "Sacred Himalayan cave shrine.",
+      "info": "Situated at a breathtaking altitude of 3,888 meters, this cave shrine is one of the holiest in Hinduism. It houses a natural ice Stalagmite (Lingam) that waxes and wanes with the phases of the moon. According to legend, this is the secret place where Lord Shiva revealed the 'Amar Katha' (secret of immortality) to Goddess Parvati. To ensure no living being overheard, he left his bull Nandi, his snake, and his moon behind at various stops en route, creating the pilgrimage route taken by devotees today.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXyGX7CgH7X_GyXvu3QZFkghVjwsLB3YVuZg&usqp=CAU",
       "deity": "Shiva",
       "normalized_x": 0.42,
@@ -366,7 +366,7 @@
     {
       "name": "Hemis Monastery",
       "location": "Leh",
-      "info": "Largest and wealthiest monastery in Ladakh.",
+      "info": "Hidden inside a gorge in the Changthang region, Hemis is the largest and wealthiest Buddhist monastery in Ladakh. Established in 1672 by King Sengge Namgyal, it belongs to the Drukpa lineage. It is world-famous for the Hemis Festival, which celebrates the birth of Guru Padmasambhava with the mystic 'Cham' masked dances. The monastery also houses a giant thangka (religious painting) that is unfurled only once every 12 years.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8Utr4YEOLXJYXyhbHIXmFmY9B5qx-Ty5w&usqp=CAU",
       "deity": "Buddha",
       "normalized_x": 0.45,
@@ -377,7 +377,7 @@
     {
       "name": "Ujra Mosque",
       "location": "Kavaratti",
-      "info": "17th-century mosque known for intricate wood carvings.",
+      "info": "The Ujra Mosque is a stunning piece of 17th-century architecture built by Sheikh Mohammad Kasim. Unlike typical mosques with domes and minarets, this structure resembles a Kerala-style temple with a sloping tiled roof. It is renowned for its acoustic engineering and the ceiling of its main hall, which is intricately carved from a single piece of driftwood. The mosque grounds also contain a well with water believed to have curative properties.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaW3hxsUWPeATpYhIZ_OEOMZluCVzn1J82aQ&usqp=CAU",
       "deity": "Islamic",
       "normalized_x": 0.33,
@@ -388,7 +388,7 @@
     {
       "name": "Manakula Vinayagar Temple",
       "location": "Puducherry",
-      "info": "Historic temple dedicated to Ganesha.",
+      "info": "This vibrant temple dedicated to Lord Ganesha predates the French occupation of Pondicherry (1666). It is named after a 'Kulam' (pond) of 'Manal' (sand) that once existed nearby. History records that the French Jesuits and governors tried to demolish the temple multiple times, but every time they disrupted the idol, it would miraculously reappear or the attempts would be thwarted by local protests and 'divine intervention'. Today, it is famous for its golden chariot and the 40 different forms of Ganesha painted on its ceiling.",
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-rqfTyj_xnHOUWhjN1pTUb3HhLN-rPnuPUg&usqp=CAU",
       "deity": "Ganesha",
       "normalized_x": 0.54,
